@@ -1,0 +1,314 @@
+/* ════════════════════════════════════════════════════════════════
+   TOP SKILLS SECTION
+   ════════════════════════════════════════════════════════════════ */
+
+.TopSkills {
+  grid-area: TopSkills;
+}
+
+.TopSkillsTitle {
+  margin-bottom: clamp(var(--space-2), 2vh, var(--space-4));
+}
+
+/* ── Grid ── */
+.TopSkillsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 28px);
+  place-items: center;
+  padding: clamp(24px, 4vh, 48px) 0;
+}
+
+/* ── Tile wrapper ──
+   perspective must live HERE (on the parent),
+   NOT on .flip itself — otherwise preserve-3d breaks */
+.tile {
+  width: min(100%, var(--card-w));
+  perspective: 1400px;
+  position: relative;
+}
+
+/* ── Flip container ──
+   !important on transition guards against the global
+   theme-transition rule overwriting the transform animation */
+.flip {
+  width: 100%;
+  height: var(--card-h);
+  position: relative;
+  transform-style: preserve-3d;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-glow);
+  /* cursor shows the card is interactive */
+  cursor: pointer;
+  transition:
+    box-shadow var(--transition-base),
+    transform var(--transition-bounce) !important;
+}
+
+.flip:hover {
+  box-shadow: var(--shadow-glow-hover);
+}
+
+/* JS adds / removes this class */
+.flip.is-flipped {
+  transform: rotateY(180deg) !important;
+}
+
+/* ── Face — shared ──
+   overflow:hidden is correct here — it clips the card content
+   but does NOT affect preserve-3d because .face is a child,
+   not an ancestor, of .flip */
+.face {
+  position: absolute;
+  inset: 0;
+  background: var(--surface);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  /* only color/border transitions — never transform */
+  transition:
+    border-color var(--transition-base),
+    background var(--transition-base) !important;
+}
+
+/* Front sits on top in normal state */
+.face.front {
+  z-index: 2;
+}
+
+/* Back starts pre-rotated so it's hidden until flip */
+.face.back {
+  transform: rotateY(180deg);
+  grid-template-rows: 1fr auto;
+  padding: 0;
+  z-index: 1;
+}
+
+/* ── Hero image ── */
+.hero {
+  width: 100%;
+  height: clamp(140px, 18vw, 200px);
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+  transition:
+    transform var(--transition-slow),
+    filter var(--transition-slow);
+}
+
+/* Only animate hero when NOT flipped */
+.tile:hover .face.front .hero {
+  transform: scale(1.04);
+  filter: brightness(1.05) saturate(1.1);
+}
+
+/* ── Pad areas ── */
+.pad {
+  padding: clamp(0.7rem, 1.5vw, 1rem) clamp(0.7rem, 1.5vw, 1rem) 0.6rem;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.back-pad {
+  padding: clamp(0.7rem, 1.5vw, 1rem);
+  overflow: auto;
+}
+
+/* ── Typography ── */
+.TopSkillsContainer .title {
+  font-size: clamp(0.95rem, 0.85rem + 0.5vw, var(--fs-2xl)) !important;
+  color: var(--accent);
+  margin: 0 0 0.3rem;
+  line-height: var(--lh-tight);
+}
+
+.tsmeta {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(0.78rem, 0.75rem + 0.2vw, 0.88rem);
+  line-height: var(--lh-relaxed);
+}
+
+.excerpt {
+  margin: 0.6rem 0 0;
+  font-size: clamp(0.8rem, 0.78rem + 0.2vw, 0.9rem);
+  line-height: var(--lh-relaxed);
+  color: var(--muted);
+}
+
+.back .excerpt {
+  color: var(--text, #111);
+  margin-top: 0.5rem;
+}
+
+/* ── Flip button ──
+   Must have pointer-events:auto — .pad sets none on its children */
+.flip-btn {
+  position: absolute;
+  right: 0.7rem;
+  top: 0.7rem;
+  z-index: var(--z-dot);
+  pointer-events: auto !important;
+  cursor: pointer;
+  background: color-mix(in oklab, var(--accent) 12%, var(--surface));
+  color: var(--accent);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: clamp(0.28rem, 0.5vh, 0.38rem) clamp(0.6rem, 1vw, 0.9rem);
+  font-size: clamp(0.72rem, 0.7rem + 0.1vw, 0.82rem);
+  font-weight: var(--fw-bold);
+  user-select: none;
+  box-shadow: var(--shadow);
+  /* explicit list — never inherits a transform override */
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    transform 0.15s,
+    box-shadow var(--transition-base) !important;
+}
+
+.flip-btn:hover {
+  background: var(--accent);
+  color: var(--primary-color-light);
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px color-mix(in oklab, var(--accent) 30%, transparent);
+}
+
+/* ── Actions bar ── */
+.actions {
+  display: flex;
+  gap: clamp(0.4rem, 0.8vw, 0.6rem);
+  flex-wrap: wrap;
+  padding: clamp(0.5rem, 1vh, 0.8rem) clamp(0.7rem, 1.5vw, 1rem)
+    clamp(0.7rem, 1.5vh, 1rem);
+  border-top: 1px dashed var(--border);
+  background: linear-gradient(
+    to top,
+    color-mix(in oklab, var(--accent) 8%, transparent),
+    transparent 60%
+  );
+  /* actions bar must be clickable */
+  pointer-events: auto;
+}
+
+/* ── Back button ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  font-weight: var(--fw-bold);
+  font-size: clamp(0.78rem, 0.75rem + 0.2vw, 0.9rem);
+  line-height: 1;
+  padding: clamp(0.5rem, 1vh, 0.7rem) clamp(0.7rem, 1.2vw, 1.05rem);
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--accent) 12%, var(--surface));
+  color: var(--accent);
+  cursor: pointer;
+  pointer-events: auto !important;
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    transform 0.15s !important;
+}
+
+.btn:hover {
+  background: var(--accent);
+  color: var(--primary-color-light);
+  box-shadow: 0 6px 18px color-mix(in oklab, var(--accent) 30%, transparent);
+  transform: scale(1.03);
+}
+
+/* ── See Projects button ── */
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: var(--accent-ink, var(--primary-color-light));
+  border: 1px solid color-mix(in oklab, var(--accent) 65%, black);
+  box-shadow: 0 8px 20px color-mix(in oklab, var(--accent) 25%, transparent);
+  padding: clamp(0.5rem, 1vh, 0.72rem) clamp(0.7rem, 1.2vw, 1.15rem);
+  border-radius: var(--radius-pill);
+  font-weight: var(--fw-bold);
+  font-size: clamp(0.8rem, 0.78rem + 0.2vw, 0.9rem);
+  cursor: pointer;
+  pointer-events: auto !important;
+  transition:
+    background var(--transition-base),
+    transform var(--transition-base),
+    box-shadow var(--transition-base) !important;
+}
+
+.read-more:hover {
+  background: color-mix(in oklab, var(--accent) 80%, black);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px color-mix(in oklab, var(--accent) 35%, transparent);
+}
+
+/* ════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Large / PC (≥ 1025px): 3 columns — already set as default ── */
+@media (min-width: 1200px) {
+  .TopSkillsContainer {
+    gap: clamp(24px, 2.5vw, 36px);
+  }
+}
+
+/* ── Tablet (641px – 1024px): 2 columns ── */
+@media (max-width: 1024px) {
+  .TopSkillsContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(12px, 2vw, 24px);
+  }
+  .hero {
+    height: clamp(130px, 20vw, 180px);
+  }
+}
+
+/* ── Phone (≤ 640px): 1 column ── */
+@media (max-width: 640px) {
+  .TopSkillsContainer {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+    gap: clamp(16px, 3vh, 28px);
+    padding: clamp(16px, 3vh, 32px) 0;
+  }
+  .tile {
+    width: 100%;
+  }
+  .flip {
+    height: clamp(340px, 75vw, 420px);
+  }
+  .hero {
+    height: clamp(150px, 35vw, 200px);
+  }
+}
+
+/* ── Reduced motion — disable flip animation only ── */
+@media (prefers-reduced-motion: reduce) {
+  .flip {
+    transition: box-shadow var(--transition-base) !important;
+  }
+  .flip.is-flipped {
+    /* instant switch instead of animated flip */
+    transition: none !important;
+  }
+  .hero,
+  .flip-btn,
+  .btn,
+  .read-more {
+    transition: none !important;
+  }
+}

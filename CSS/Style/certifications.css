@@ -1,0 +1,380 @@
+/* ════════════════════════════════════════════════════════════════
+   CERTIFICATIONS SECTION
+   1 col phone · 2 cols small tablet · 3 cols large tablet · 4 cols pc
+   ════════════════════════════════════════════════════════════════ */
+
+.certifications {
+  grid-area: certifications;
+  position: relative;
+  justify-items: center;
+}
+
+/* ── Gallery ── */
+.gallery {
+  max-width: 1260px;
+  margin: clamp(0.8rem, 2vh, 1.4rem) auto clamp(1.4rem, 3vh, 2.4rem);
+  padding: 0 clamp(0.5rem, 2vw, 1rem);
+  display: grid;
+  /* Default: 4 columns — large screens */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 30px);
+}
+
+/* ── Tile ── */
+figure.tile {
+  margin: 0;
+  background: #0f141a;
+  border: 2px solid var(--certiBorder, var(--accent));
+  border-radius: var(--radius-md, 14px);
+  box-shadow: var(--certiCardShadow);
+  overflow: clip;
+  position: relative;
+  transform: scale(1.015);
+  /* smooth lift + glow + border — spring easing */
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
+}
+
+figure.tile:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--certiCardShadow-hover);
+  border-color: var(--MagicColor, var(--accent));
+}
+
+figure.tile:has(a:focus-visible) {
+  transform: translateY(-9px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.45);
+  border-color: var(--border);
+}
+
+/* ── Thumbnail ── */
+.thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  transform: scale(1);
+  filter: saturate(1.02) contrast(1.02);
+  /* slightly slower than tile so it feels layered */
+  transition:
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.55s ease;
+}
+
+.tile:hover .thumb,
+.tile:has(a:focus-visible) .thumb {
+  transform: scale(1.08);
+  filter: saturate(1.15) contrast(1.08) brightness(1.04);
+}
+
+/* ── Caption ── */
+figcaption.caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: clamp(0.6rem, 1.5vw, 0.85rem) clamp(0.6rem, 1.5vw, 0.95rem);
+  color: #fff;
+  background: linear-gradient(
+    180deg,
+    rgba(34, 255, 0, 0) 0%,
+    rgba(22, 119, 0, 0.6) 100%
+  );
+  opacity: 0;
+  transform: translateY(14px);
+  /* slight delay so caption slides in after thumb starts scaling */
+  transition:
+    opacity 0.35s ease 0.08s,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.08s;
+}
+
+.tile:hover .caption,
+.tile:has(a:focus-visible) .caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: clamp(0.78rem, 0.75rem + 0.2vw, 0.95rem);
+  color: #d9ffd5;
+  font-weight: 700;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0.15rem clamp(0.35rem, 0.8vw, 0.5rem);
+  border-radius: 999px;
+  background: rgb(0, 155, 21);
+  color: #d9ffd5;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.193) inset;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-size: clamp(0.72rem, 0.7rem + 0.1vw, 0.82rem);
+}
+
+.tile a {
+  position: absolute;
+  inset: 0;
+}
+
+.tile a:focus-visible {
+  outline: 3px solid rgba(0, 115, 255, 0.55);
+  outline-offset: -3px;
+  border-radius: 6px;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   LIGHTBOX
+   ════════════════════════════════════════════════════════════════ */
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 42, 4, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-lightbox, 9999);
+  padding: clamp(12px, 2vw, 20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-window {
+  position: relative;
+  background: #0f141a;
+  border: 1px solid #1b2330;
+  border-radius: var(--radius-lg, 18px);
+  overflow: hidden;
+  max-width: 860px;
+  width: 100%;
+  box-shadow: var(--shadow-lightbox, 0 32px 80px rgba(0, 0, 0, 0.7));
+  transform: scale(0.94) translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.lightbox-overlay.open .lightbox-window {
+  transform: scale(1) translateY(0);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+  width: clamp(30px, 4vw, 36px);
+  height: clamp(30px, 4vw, 36px);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: clamp(12px, 1vw, 15px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.18s,
+    transform 0.18s;
+}
+
+.lightbox-close:hover {
+  background: rgba(247, 37, 37, 0.7);
+  transform: scale(1.1);
+}
+
+.lightbox-body {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-height: 72vh;
+  background: #080c11;
+}
+
+.lightbox-img-wrap {
+  width: 55%;
+  flex-shrink: 0;
+  overflow: hidden;
+  align-self: center;
+}
+
+.lightbox-img {
+  width: 100%;
+  height: auto;
+  max-height: 72vh;
+  object-fit: cover;
+  display: block;
+  padding: clamp(6px, 1vw, 10px);
+  transition: opacity 0.25s ease;
+}
+
+.lightbox-description {
+  width: 45%;
+  height: 76vh;
+  padding: clamp(16px, 2.5vw, 28px) 4px clamp(16px, 2.5vw, 28px) 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: stretch;
+  overflow: hidden;
+}
+
+.lightbox-description h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(0.9rem, 0.85rem + 0.3vw, 1.05rem);
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+  border-bottom: 1px solid #00ff1a;
+  padding-bottom: 10px;
+  flex-shrink: 0;
+  margin-right: clamp(1rem, 3vw, 5vw);
+}
+
+.Scrollable {
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+  color: #bababa;
+  padding: clamp(6px, 1vw, 10px);
+  font-size: clamp(var(--fs-sm, 12px), 0.8rem + 0.1vw, var(--fs-base, 13px));
+}
+
+.lightbox-footer {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.2vw, 12px);
+  padding: clamp(8px, 1.5vw, 12px) clamp(12px, 2vw, 20px);
+  background: #0f141a;
+  border-top: 1px solid #1b2330;
+  flex-wrap: wrap;
+}
+
+.lightbox-chip {
+  display: inline-block;
+  padding: 0.2rem clamp(0.4rem, 0.8vw, 0.65rem);
+  border-radius: 999px;
+  background: rgba(0, 255, 51, 0.75);
+  font-weight: 600;
+  font-size: clamp(0.72rem, 0.7rem + 0.1vw, 0.8rem);
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.lightbox-title {
+  font-size: clamp(0.8rem, 0.78rem + 0.2vw, 0.95rem);
+  color: rgba(255, 255, 255, 0.75);
+  font-family: ui-monospace, monospace;
+  letter-spacing: 0.03em;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── PC (≥ 1025px): 4 columns ── */
+@media (min-width: 1025px) {
+  .tile:hover .thumb,
+  .tile:has(a:focus-visible) .thumb {
+    transform: scale(1.08);
+    filter: saturate(1.15) contrast(1.08) brightness(1.04);
+  }
+  .tile:hover .caption,
+  .tile:has(a:focus-visible) .caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Large tablet (769px – 1024px): 3 columns ── */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(12px, 2vw, 20px);
+  }
+}
+
+/* ── Small tablet (641px – 768px): 2 columns ── */
+@media (max-width: 768px) and (min-width: 641px) {
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(10px, 2vw, 16px);
+  }
+}
+
+/* ── Phone (≤ 640px): 1 column, caption always visible ── */
+@media (max-width: 640px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: clamp(12px, 3vw, 20px);
+  }
+  /* always active state on touch — no hover available */
+  .tile .thumb {
+    filter: saturate(1.15) contrast(1.08) brightness(1.04);
+  }
+  figcaption.caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Lightbox stacks vertically on mobile ── */
+@media (max-width: 600px) {
+  .lightbox-body {
+    flex-direction: column;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .lightbox-img-wrap,
+  .lightbox-description {
+    width: 100%;
+    height: auto;
+  }
+  .lightbox-description {
+    border-left: none;
+    border-top: 1px solid #1b2330;
+    padding: var(--space-4, 18px);
+  }
+}
+
+@media print {
+  figure.tile {
+    box-shadow: none !important;
+    transform: none !important;
+  }
+  figcaption.caption {
+    opacity: 1 !important;
+    transform: none !important;
+    background: rgba(0, 0, 0, 0.06) !important;
+    color: #000 !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

@@ -1,0 +1,136 @@
+/* ════════════════════════════════════════════════════════════════
+   CONTACTS SECTION
+   ════════════════════════════════════════════════════════════════ */
+
+.contacts {
+  grid-area: contacts;
+  justify-items: center;
+}
+
+/* ── Social icon row ── */
+.social-row {
+  margin-top: clamp(12px, 2vh, 24px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(6px, 1.5vw, 10px);
+}
+
+/* Strip link default styling */
+.social-row a {
+  display: inline-block;
+  line-height: 0;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   SOCIAL ICON — shared base
+   NEVER set background-size — sprite positions are pixel-exact.
+   ════════════════════════════════════════════════════════════════ */
+
+.social-icon {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-image: url("/Images/Social media Image.png");
+  background-repeat: no-repeat;
+  /* NO background-size — sprite is pixel-perfect at natural size */
+  transform: perspective(1000px);
+  transform-style: preserve-3d;
+  transition: all 400ms ease-in-out;
+  cursor: pointer;
+}
+
+/* ── Original hover: rotate -90deg ── */
+.social-icon:hover {
+  transform: perspective(1000px) rotate(-90deg);
+}
+
+/* ── Normal state (top row, y = 0) ── */
+.faceBook {
+  background-position: 0px 0px;
+}
+.rss {
+  background-position: -57px 0px;
+}
+.linkedIn {
+  background-position: -114px 0px;
+}
+.pint {
+  background-position: -171px 0px;
+}
+.share {
+  background-position: -227px 0px;
+}
+.youtube {
+  background-position: -282px -1px;
+}
+.Gmail {
+  background-position: -337px -1px;
+}
+
+/* ── Hover state (bottom row, y = -64px) ── */
+.faceBook:hover {
+  background-position: 0px -64px;
+}
+.rss:hover {
+  background-position: -57px -64px;
+}
+.linkedIn:hover {
+  background-position: -114px -64px;
+}
+.pint:hover {
+  background-position: -171px -64px;
+}
+.share:hover {
+  background-position: -227px -64px;
+}
+.youtube:hover {
+  background-position: -282px -64px;
+}
+.Gmail:hover {
+  background-position: -337px -64px;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════════════════════ */
+
+/* On touch screens disable 3-D rotate (no hover state to reset it) */
+@media (max-width: 480px) {
+  .social-icon {
+    transition: opacity 200ms ease;
+  }
+  .social-icon:hover {
+    transform: none;
+    opacity: 0.75;
+  }
+  /* still swap sprite row on tap */
+  .faceBook:hover {
+    background-position: 0px -64px;
+  }
+  .rss:hover {
+    background-position: -57px -64px;
+  }
+  .linkedIn:hover {
+    background-position: -114px -64px;
+  }
+  .pint:hover {
+    background-position: -171px -64px;
+  }
+  .share:hover {
+    background-position: -227px -64px;
+  }
+  .youtube:hover {
+    background-position: -282px -64px;
+  }
+  .Gmail:hover {
+    background-position: -337px -64px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-icon {
+    transition: none !important;
+    transform: none !important;
+  }
+}

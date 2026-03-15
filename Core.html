@@ -1,0 +1,1663 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El Mehdi Mhaoune</title>
+
+    <link rel="stylesheet" href="/CSS/Style/Global.css" />
+    <link rel="stylesheet" href="/CSS/Style/Projects.css" />
+    <link rel="stylesheet" href="/CSS/CSSAnimations/ProjectsAnimation.css" />
+    <link rel="stylesheet" href="/CSS/Style/TopSkills.css" />
+    <link rel="stylesheet" href="/CSS/CSSAnimations/TopSkillsAnimation.css" />
+    <link rel="stylesheet" href="/CSS/Style/General.css" />
+    <link rel="stylesheet" href="/CSS/CSSAnimations/GeneralAnimation.css" />
+    <link rel="stylesheet" href="/CSS/Style/Contacts.css" />
+    <link rel="stylesheet" href="/CSS/CSSAnimations/ContactsAnimation.css" />
+    <link rel="stylesheet" href="/CSS/Style/certifications.css" />
+    <link
+      rel="stylesheet"
+      href="/CSS/CSSAnimations/certificationsAnimation.css"
+    />
+    <link rel="stylesheet" href="/CSS/Style/Educations.css" />
+    <link rel="stylesheet" href="/CSS/CSSAnimations/EducationsAnimation.css" />
+
+    <script src="/JS/Global.js" defer></script>
+    <script src="/JS/Projects.js" defer></script>
+    <script src="/JS/General.js" defer></script>
+    <script src="/JS/TopSkills.js" defer></script>
+    <script src="/JS/Education.js" defer></script>
+    <script src="/JS/certifications.js" defer></script>
+    <script src="/JS/Contacts.js" defer></script>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <a class="nav-brand" href="#general">MHN</a>
+
+        <ul>
+          <li><a href="#general">General</a></li>
+          <li><a href="#TopSkills">Top Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#certifications">Courses</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contacts">Contacts</a></li>
+        </ul>
+
+        <button
+          id="themeToggle"
+          class="theme-toggle"
+          type="button"
+          aria-pressed="false"
+          aria-label="Toggle dark or light theme"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M12 4a1 1 0 0 1 1 1V7a1 1 0 0 1-2 0V5a1 1 0 0 1 1-1Zm0 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm8-5a1 1 0 0 1 1 1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1 1 1 0 0 1 1-1ZM3 12a1 1 0 0 1-1 1H0a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1Zm15.66 6.66a1 1 0 0 1 1.41 0l1.42 1.42a1 1 0 0 1-1.42 1.41l-1.41-1.41a1 1 0 0 1 0-1.42ZM4.93 4.93a1 1 0 0 1 1.41 0L7.76 6.34A1 1 0 0 1 6.34 7.76L4.93 6.34a1 1 0 0 1 0-1.41Zm0 14.14a1 1 0 0 1 1.41 0l1.41 1.41A1 1 0 0 1 6.34 22.9l-1.41-1.41a1 1 0 0 1 0-1.41ZM19.07 4.93a1 1 0 0 1 1.41 0 1 1 0 0 1 0 1.41l-1.41 1.41A1 1 0 0 1 17.66 6.34l1.41-1.41Z"
+            />
+          </svg>
+          <span>Toggle Theme</span>
+        </button>
+      </div>
+    </nav>
+
+    <main class="maincontainer">
+      <!-- ── General ── -->
+      <figure id="general" class="MainPicture">
+        <!-- Background image -->
+        <img class="bg" src="/Images/Mypicture.jpg" alt="El Mehdi Mhaoune" />
+
+        <!-- Filter overlay -->
+        <div class="bg-overlay"></div>
+
+        <!-- Info card -->
+        <div class="card">
+          <div class="card-eyebrow">Full Stack · Multimedia</div>
+          <h1 class="title">
+            El Mehdi<br /><span class="title-accent">Mhaoune</span>
+          </h1>
+          <p class="description">
+            Welcome to my portfolio. My name is El Mehdi Mehaoune, and I was
+            born in Khouribga, Morocco, on March 1, 2002. I obtained my
+            Baccalaureate degree twice and continued my studies at OFPPT, where
+            I studied Electrical.<br />
+            Alongside my studies, I developed a strong interest in programming
+            and software development. This interest motivated me to learn how to
+            build applications and improve my skills in full stack development,
+            desktop applications, and web technologies.<br />
+            Below, you will find the most important information about my
+            education, skills, projects, and experiences.
+          </p>
+          <div class="card-tags">
+            <span class="tag">💻 Desktop Dev</span>
+            <span class="tag">💻 Web Dev</span>
+            <span class="tag">🎬 Video Editor</span>
+            <span class="tag">🎨 Visual Designer</span>
+          </div>
+        </div>
+
+        <!-- Scroll hint -->
+        <div class="scroll-hint">
+          <span class="scroll-label">Scroll</span>
+          <span class="scroll-arrow">↓</span>
+        </div>
+      </figure>
+
+      <!-- ── Top Skills ── -->
+      <section id="TopSkills" class="TopSkills">
+        <h2 class="section-title">Top Skills</h2>
+        <div class="TopSkillsContainer">
+          <!-- Skill 1 -->
+          <div class="tile" id="tile1">
+            <div class="flip">
+              <!-- Front -->
+              <article class="face front">
+                <img
+                  class="hero"
+                  src="/Images/Development_Picture.jpg"
+                  loading="lazy"
+                  alt="Full Stack Developer"
+                />
+                <div class="pad">
+                  <h2 class="title">Full-Stack .NET Developer</h2>
+                  <p class="tsmeta">
+                    Back-End Developer • Full-Stack Desktop • Full-Stack Web
+                  </p>
+                </div>
+                <div class="pad" style="padding-top: 0">
+                  <p class="excerpt" style="color: var(--muted)">
+                    Flip for more information.
+                  </p>
+                </div>
+                <button class="flip-btn" data-tile="tile1">Flip ↺</button>
+              </article>
+              <!-- Back -->
+              <article class="face back">
+                <div class="back-pad">
+                  <h2 class="title">Full-Stack .NET Developer</h2>
+                  <p class="tsmeta">
+                    Back-End Developer • Full-Stack Desktop • Full-Stack Web
+                  </p>
+                  <p class="excerpt">
+                    Develop software projects using C++ and C# (.NET Framework),
+                    building Windows Forms and Console applications. Currently
+                    expanding into web development with HTML, CSS, and
+                    JavaScript.
+                  </p>
+                </div>
+                <div class="actions">
+                  <button
+                    class="read-more"
+                    onclick="
+                      document
+                        .getElementById('projects')
+                        .scrollIntoView({ behavior: 'smooth' })
+                    "
+                  >
+                    See Projects
+                  </button>
+                  <button class="btn" data-tile="tile1">↩ Back</button>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Skill 2 -->
+          <div class="tile" id="tile2">
+            <div class="flip">
+              <!-- Front -->
+              <article class="face front">
+                <img
+                  class="hero"
+                  src="/Images/Visual_Designer.jpg"
+                  loading="lazy"
+                  alt="Visual Designer"
+                />
+                <div class="pad">
+                  <h2 class="title">Visual Designer</h2>
+                  <p class="tsmeta">Transforming ideas into system designs.</p>
+                </div>
+                <div class="pad" style="padding-top: 0">
+                  <p class="excerpt" style="color: var(--muted)">
+                    Flip for more information.
+                  </p>
+                </div>
+                <button class="flip-btn" data-tile="tile2">Flip ↺</button>
+              </article>
+              <!-- Back -->
+              <article class="face back">
+                <div class="back-pad">
+                  <h2 class="title">Visual Designer</h2>
+                  <p class="tsmeta">Transforming ideas into system designs.</p>
+                  <p class="excerpt">
+                    Able to transform ideas into visual designs, including
+                    logos, presentations, and applications. Skilled at combining
+                    colors effectively and creating well-structured layouts with
+                    proper visual balance.
+                  </p>
+                </div>
+                <div class="actions">
+                  <button class="btn" data-tile="tile2">↩ Back</button>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Skill 3 -->
+          <div class="tile" id="tile3">
+            <div class="flip">
+              <!-- Front -->
+              <article class="face front">
+                <img
+                  class="hero"
+                  src="/Images/marketing.jpg"
+                  loading="lazy"
+                  alt="Audience Engagement"
+                />
+                <div class="pad">
+                  <h2 class="title">Audience Engagement Strategist</h2>
+                  <p class="tsmeta">
+                    Capturing and engaging client attention through social
+                    media.
+                  </p>
+                </div>
+                <div class="pad" style="padding-top: 0">
+                  <p class="excerpt" style="color: var(--muted)">
+                    Flip for more information.
+                  </p>
+                </div>
+                <button class="flip-btn" data-tile="tile3">Flip ↺</button>
+              </article>
+              <!-- Back -->
+              <article class="face back">
+                <div class="back-pad">
+                  <h2 class="title">Audience Engagement Strategist</h2>
+                  <p class="tsmeta">
+                    Capturing and engaging client attention through social
+                    media.
+                  </p>
+                  <p class="excerpt">
+                    Content Engagement Specialist leveraging consumer psychology
+                    to attract and retain audience attention. Proficient in
+                    video and photo editing, producing high-quality visual
+                    content for presentations, social media, and marketing
+                    materials.
+                  </p>
+                </div>
+                <div class="actions">
+                  <button class="btn" data-tile="tile3">↩ Back</button>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Education ── -->
+      <section id="education" class="educations">
+        <h2 class="section-title">Education</h2>
+
+        <div class="edu-timeline">
+          <details class="edu-card" style="--i: 1">
+            <summary class="edu-summary">
+              <span class="edu-icon">🎓</span>
+              <span class="edu-summary-body">
+                <span class="edu-title">Dakhla High School</span>
+                <span class="edu-meta">
+                  <span class="edu-badge">Boujniba</span>
+                  <span class="when">2019 — 2021</span>
+                </span>
+              </span>
+              <span class="edu-arrow">›</span>
+            </summary>
+            <div class="edu-body">
+              <ul class="clean muted">
+                <li>
+                  I studied at Dakhla Qualifying High School for two years, but
+                  I was not successful in obtaining the Baccalaureate diploma.
+                  After two years, I decided to pursue it again and obtained a
+                  Baccalaureate in Literature and Human Sciences, followed by
+                  another Baccalaureate in Life and Earth Sciences through the
+                  Free Baccalaureate (Bac Libre) system.
+                </li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="edu-card" style="--i: 2">
+            <summary class="edu-summary">
+              <span class="edu-icon">⚡</span>
+              <span class="edu-summary-body">
+                <span class="edu-title"
+                  >Qualified Electrician – Residential Electrical
+                  Installation</span
+                >
+                <span class="edu-meta">
+                  <span class="edu-badge">ITA - Boujniba</span>
+                  <span class="when">2022 - 2024</span>
+                </span>
+              </span>
+              <span class="edu-arrow">›</span>
+            </summary>
+            <div class="edu-body">
+              <ul class="clean muted">
+                <li>
+                  I studied at ITA Boujniba for two years, where I developed
+                  several practical skills during my training. I learned how to
+                  install a complete residential electrical system from scratch,
+                  including wiring, circuit installation, and safety procedures.
+                  I also learned how to diagnose electrical faults and
+                  troubleshoot problems in electrical installations, trying to
+                  find appropriate and effective solutions. In addition, I
+                  gained hands-on experience working with electrical tools and
+                  equipment, reading basic electrical diagrams, and following
+                  proper installation standards.
+                </li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="edu-card" style="--i: 3">
+            <summary class="edu-summary">
+              <span class="edu-icon">💻</span>
+              <span class="edu-summary-body">
+                <span class="edu-title"
+                  >Back-End / Full-Stack Desktop and Web Developer</span
+                >
+                <span class="edu-meta">
+                  <span class="edu-badge">Online</span>
+                  <span class="when">2024 - Present</span>
+                </span>
+              </span>
+              <span class="edu-arrow">›</span>
+            </summary>
+            <div class="edu-body">
+              <ul class="clean muted">
+                <li>
+                  Over the past two years, I have built a solid foundation in
+                  software development by learning several programming
+                  languages, frameworks, and development practices. I studied
+                  programming with C++ and C#, focusing on problem-solving
+                  techniques using algorithms and data structures. During this
+                  period, I practiced solving programming problems and
+                  implementing efficient solutions using structured logic.
+                </li>
+                <li>
+                  I gained experience with the .NET Framework and .NET Core,
+                  applying Object-Oriented Programming principles to design
+                  maintainable and scalable applications. I also learned how to
+                  structure applications using the Three-Tier Architecture,
+                  separating the presentation, business logic, and data access
+                  layers.
+                </li>
+                <li>
+                  On the data side, I worked extensively with SQL, writing
+                  queries, designing Relational Schema, and modeling databases
+                  using Entity–Relationship Diagram. I used ADO.NET and Language
+                  Integrated Query to interact with databases and manipulate
+                  data efficiently within applications.
+                </li>
+                <li>
+                  I also developed desktop applications using Windows Forms and
+                  explored lower-level system interaction through the Win32 API.
+                  In addition, I gained basic knowledge of web technologies such
+                  as HTML, CSS, and JavaScript, as well as building and
+                  interacting with Application Programming Interface services.
+                </li>
+                <li>
+                  Throughout this learning process, I built several practical
+                  projects that helped me strengthen my skills in debugging,
+                  writing clean and maintainable code, and understanding how to
+                  design complete software solutions from database design to
+                  user interface implementation.
+                </li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="edu-card" style="--i: 4">
+            <summary class="edu-summary">
+              <span class="edu-icon">⚡</span>
+              <span class="edu-summary-body">
+                <span class="edu-title"
+                  >Specialized Technician in Electrical Engineering –
+                  Electromechanics of Automated Systems</span
+                >
+                <span class="edu-meta">
+                  <span class="edu-badge">ISTA - Khouribga</span>
+                  <span class="when">2024 - Present</span>
+                </span>
+              </span>
+              <span class="edu-arrow">›</span>
+            </summary>
+            <div class="edu-body">
+              <ul class="clean muted">
+                <li>
+                  During my training as a Specialized Technician in Electrical
+                  Engineering – Electromechanics of Automated Systems at OFPPT,
+                  I learned the basic fundamentals of industrial electricity and
+                  electromechanical systems. I gained basic knowledge in reading
+                  electrical diagrams, understanding electrical components, and
+                  working with electrical panels (tableaux électriques). I
+                  studied the principles of direct current (DC) and alternating
+                  current (AC) and how they are used in electrical systems.
+                </li>
+                <li>
+                  I was also introduced to industrial automation, including
+                  basic work with TIA Portal and Siemens programs for PLC
+                  systems. In addition, I gained introductory knowledge of
+                  electronic circuit design using Proteus Design Suite, and
+                  learned to use basic electrical tools and measurement devices
+                  while following electrical safety practices.
+                </li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- ── certifications ── -->
+      <section id="certifications" class="certifications">
+        <h2 class="section-title">Certifications</h2>
+        <div class="gallery" aria-label="Curated image grid">
+          <!-- BAC Lettre -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/BAC Lettre.png"
+              loading="lazy"
+              alt="Literature and Human Sciences"
+            />
+            <a href="#" aria-label="Open 1"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">Literature and Human Sciences</span>High
+                schools Ibn Yassin – Khouribga</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Baccalaureate in Literature and Human Sciences</h3>
+              <p>
+                I obtained my Baccalaureate (free track) in Literature and Human
+                Sciences at Lycée Ibn Yassin – Khouribga
+              </p>
+            </div>
+          </figure>
+
+          <!-- BAC SVT -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/BAC SVT.png"
+              loading="lazy"
+              alt="Life and Earth Sciences"
+            />
+            <a href="#" aria-label="Open 2"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">Life and Earth Sciences</span>High schools
+                Ibn Yassin – Khouribga</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Baccalaureate in Life and Earth Sciences</h3>
+              <p>
+                I obtained my Baccalaureate (free track) in Life and Earth
+                Sciences at Lycée Ibn Yassin – Khouribga
+              </p>
+            </div>
+          </figure>
+
+          <!-- 1 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N1.png"
+              loading="lazy"
+              alt="Course N1"
+            />
+            <a href="#" aria-label="Open 3"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">Foundations</span>Programming Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Programming Foundations – Level 1</h3>
+              <p>
+                In this course I learned the fundamental concepts of programming
+                before starting to write code. I understood how computers work,
+                how data is represented and processed, and the difference
+                between data, information, knowledge, and wisdom. I learned
+                number systems like binary, hexadecimal, and octal and how to
+                convert between them. I also learned about bits, bytes, memory
+                concepts, and computer performance. The course introduced
+                programming languages, translation tools like compilers and
+                interpreters, and basic programming concepts such as variables,
+                constants, and operations. This course helped me build a strong
+                foundation and understand how computers think before learning
+                any programming language.
+              </p>
+            </div>
+          </figure>
+
+          <!-- 2 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N2.png"
+              loading="lazy"
+              alt="Course N2"
+            />
+            <a href="#" aria-label="Open 4"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">Problem Solving</span>Programming
+                Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: Algorithms and Problem Solving – Level 1</h3>
+              <p>
+                In this course I learned how to think and solve problems before
+                writing code. I understood what an algorithm is and how to
+                analyze problems logically. I practiced breaking complex
+                problems into simple steps and designing solutions using
+                flowcharts. I also learned how to identify inputs, processes,
+                decisions, and outputs when solving problems. Through many
+                practical exercises, this course helped me improve my
+                problem-solving skills and build the right mindset for
+                programming before using any programming language.
+              </p>
+            </div>
+          </figure>
+
+          <!-- 3 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N3.png"
+              loading="lazy"
+              alt="Course N3"
+            />
+            <a href="#" aria-label="Open 5"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">C++</span>Programming Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: Introduction to Programming with C++ – Level 1</h3>
+              <p>
+                In this course I learned the basics of programming using C++. I
+                understood how to translate problem-solving thinking into real
+                code. I practiced writing C++ programs using variables, data
+                types, input and output, operators, conditions, and loops. I
+                also learned how to organize code using functions and work with
+                arrays, structures, and enums. This course helped me understand
+                C++ as a programming tool and strengthened my ability to build
+                structured programs and apply logical thinking in real coding.
+              </p>
+            </div>
+          </figure>
+
+          <!-- 4 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N4.png"
+              loading="lazy"
+              alt="Course N4"
+            />
+            <a href="#" aria-label="Open 6"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">Clean Code</span>Programming Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>
+                Course: Algorithms & Problem-Solving – Level 1 (Solutions)
+              </h3>
+              <p>
+                In this course I improved my problem-solving skills by solving
+                the same problems again using C++ with a clean and structured
+                approach. I learned how to transform simple solutions into clean
+                and readable code by applying the divide and conquer technique.
+                I practiced breaking problems into smaller sub-problems and
+                building solutions using small reusable functions. This course
+                helped me reduce repeated code, improve code organization, and
+                write programs that are easier to understand, maintain, and
+                extend.
+              </p>
+            </div>
+          </figure>
+
+          <!-- 5 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N5.png"
+              loading="lazy"
+              alt="Course N5"
+            />
+            <a href="#" aria-label="Open 7"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">Problem-Solving</span>Programming
+                Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: Algorithms & Problem-Solving – Level 2</h3>
+              <p>
+                In this course I practiced solving more complex programming
+                problems using C++. I worked on many exercises that helped me
+                improve my problem-solving speed and logical thinking. I learned
+                new solution ideas by studying professional solutions and
+                applying clean code and divide and conquer techniques. The
+                course also introduced real programming projects, which helped
+                me gain practical experience and move from solving problems to
+                building complete programs.
+              </p>
+            </div>
+          </figure>
+
+          <!-- 6 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N6.png"
+              loading="lazy"
+              alt="Course N6"
+            />
+            <a href="#" aria-label="Open 8"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">C++ – Level 2</span>Programming
+                Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: Introduction to Programming Using C++ – Level 2</h3>
+              <p>
+                In this course I learned advanced C++ programming concepts and
+                improved my control over how programs work. I practiced
+                debugging programs using professional tools and learned how to
+                analyze execution step by step. I understood memory concepts
+                such as pointers, references, stack and heap, and dynamic memory
+                allocation. I also learned advanced functions, vectors, file
+                handling, and exception handling. This course helped me write
+                more reliable programs and understand deeply how C++ manages
+                memory and program behavior.
+              </p>
+            </div>
+          </figure>
+
+          <!-- 7 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N7.png"
+              loading="lazy"
+              alt="Course N7"
+            />
+            <a href="#" aria-label="Open 9"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">Problem Solving</span>Programming
+                Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: Algorithms & Problem Solving – Level 3</h3>
+              <p>
+                In this course I strengthened my programming experience by
+                solving more advanced algorithmic problems using C++. I
+                practiced applying clean code principles and the divide and
+                conquer approach while working on challenging exercises. This
+                course helped me improve my problem-solving speed, recognize
+                common patterns, and handle more complex problems with
+                confidence. I also worked on real programming projects, which
+                helped me move from solving individual problems to building
+                complete and structured programs.
+              </p>
+            </div>
+          </figure>
+
+          <!-- 8 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N8.png"
+              loading="lazy"
+              alt="Course N8"
+            />
+            <a href="#" aria-label="Open 10"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">Problem Solving</span>Programming
+                Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: Algorithms & Problem Solving – Level 4</h3>
+              <p>
+                In this course I strengthened my programming experience by
+                solving many advanced algorithmic problems using C++. I
+                practiced applying clean code principles and divide and conquer
+                techniques while working on a large set of challenging problems.
+                This course helped me improve my analytical thinking, handle
+                complex logic, and maintain structured solutions even with
+                bigger problems. I also worked on realistic programming projects
+                that helped me gain deeper experience and prepare for real-world
+                programming challenges.
+              </p>
+            </div>
+          </figure>
+
+          <!-- 9 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N9.png"
+              loading="lazy"
+              alt="Course N9"
+            />
+            <a href="#" aria-label="Open 11"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">Networking</span>Programming Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: Foundation level 2</h3>
+              <p>
+                I learned how networks work and how devices connect and
+                communicate. I learned about network types (LAN, MAN, WAN),
+                components (routers, switches, modems), and their roles. I
+                learned how data is sent in packets and how TCP ensures reliable
+                delivery. I learned about IPv4 and IPv6, subnet masks, NAT,
+                DHCP, ports and sockets, and MAC addresses. I learned how VPNs
+                secure connections, the difference between Internet and WWW, how
+                browsers and HTTP/HTTPS work, and how domains, URLs, subdomains,
+                and DNS identify and locate web resources. I also learned how
+                FTP transfers files between client and server. This course gave
+                me a clear understanding of networking, internet protocols, and
+                web addressing, and how all these parts work together to make
+                the internet function.
+              </p>
+            </div>
+          </figure>
+
+          <!-- 10 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N10.png"
+              loading="lazy"
+              alt="Course N10"
+            />
+            <a href="#" aria-label="Open 12"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">OOP</span>Programming Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: OOP as it Should Be – Concepts</h3>
+              <p>
+                In this course I learned Object-Oriented Programming (OOP) the
+                right way, focusing on design rather than just syntax. I
+                practiced designing and using classes and objects correctly,
+                understanding how objects work in memory, and applying concepts
+                like encapsulation, abstraction, constructors, destructors, and
+                copy constructors. I also learned to use static members,
+                inheritance, polymorphism, virtual functions, and dynamic
+                binding properly. In addition, I explored interfaces, abstract
+                classes, and pure virtual functions, and practiced organizing
+                code using libraries and reusable components. Through small
+                projects like a calculator, string library, date library, and
+                period class design, I applied OOP concepts to real problems,
+                reinforcing clean and maintainable design thinking. This course
+                helped me move from procedural coding to confident OOP-based
+                design.
+              </p>
+            </div>
+          </figure>
+
+          <!-- 11 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N11.png"
+              loading="lazy"
+              alt="Course N11"
+            />
+            <a href="#" aria-label="Open 13"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">OOP 2</span>Programming Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: OOP as it Should Be – Applications</h3>
+              <p>
+                In this course I learned how to apply Object-Oriented
+                Programming (OOP) concepts to build real-world applications and
+                complete software systems. I practiced designing and structuring
+                large programs using encapsulation, abstraction, inheritance,
+                and polymorphism. I also learned to create reusable libraries,
+                handle permissions, validation, logging, and apply security
+                rules professionally. Through project-based learning, I built
+                systems like a utility library, input & validation library, a
+                complete bank system with users, login, logs, and multiple
+                extensions, and a currency exchange system. This course helped
+                me move from understanding OOP concepts to executing them in
+                real software, managing complexity, and writing maintainable,
+                scalable, and professional OOP code.
+              </p>
+            </div>
+          </figure>
+
+          <!-- 12 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N12.png"
+              loading="lazy"
+              alt="Course N12"
+            />
+            <a href="#" aria-label="Open 14"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">Data Structures</span>Programming
+                Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: Data Structures – Level 1</h3>
+              <p>
+                In this course I learned how to organize and manage data
+                efficiently using core data structures. I practiced working with
+                arrays, matrices, stacks, queues, vectors, and linked lists
+                (singly, doubly, and circular). I also learned the concept of
+                Abstract Data Types (ADT), basic maps and unions, and how to
+                analyze performance using Time & Space Complexity (Big O
+                notation). Through practical exercises, I understood why each
+                data structure exists, when to use it, and how to perform
+                operations like insert, delete, and find correctly. This course
+                helped me build a solid foundation in data structures, preparing
+                me for advanced structures, algorithms, and real-world
+                problem-solving.
+              </p>
+            </div>
+          </figure>
+
+          <!-- 13 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N13.png"
+              loading="lazy"
+              alt="Course N13"
+            />
+            <a href="#" aria-label="Open 15"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">Problem Solving</span>Programming
+                Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: Algorithms & Problem Solving – Level 5</h3>
+              <p>
+                In this course I practiced applying data structures and
+                problem-solving skills through real projects and extended
+                exercises. I reinforced my understanding of arrays, stacks,
+                queues, linked lists, and Big O notation by using them in
+                evolving systems with multiple requirements. I learned how to
+                solve complex problems using structured thinking, extend
+                existing projects safely, and handle growing functionality
+                without losing control. Through project-based learning, I gained
+                experience simulating real-world software development, including
+                changing requirements and feature growth. This course helped me
+                consolidate Part One of the programming roadmap, building
+                confidence in my algorithmic thinking, data structure usage, and
+                readiness for advanced programming and C# desktop development.
+              </p>
+            </div>
+          </figure>
+
+          <!-- 14 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N14.png"
+              loading="lazy"
+              alt="Course N14"
+            />
+            <a href="#" aria-label="Open 16"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">C#</span>Programming Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: C# Level 1</h3>
+              <p>
+                In this course I learned how to set up the C# environment and
+                the differences between libraries, frameworks, and platforms. I
+                studied the .NET ecosystem, including .NET Framework, .NET Core,
+                CLR architecture, and key components like CTS, CLS, JIT, GC, and
+                assemblies. I practiced writing C# code, moving from C++ syntax
+                to C#, using variables, data types, operators, control flow,
+                arrays, type casting, methods, exceptions, and working with
+                DateTime and strings. I also learned to handle user input, apply
+                loops and conditionals, and perform array operations using
+                System.Linq. The course introduced Windows Forms development,
+                covering controls like TextBox, PictureBox, ComboBox, ListView,
+                ProgressBar, and Dialogs, as well as event handling, drawing,
+                and creating small projects such as a Pizza app and Tic-Tac-Toe
+                game. Through hands-on projects, I practiced designing
+                interactive desktop applications, using containers, menus,
+                timers, and notifications. This course helped me build a solid
+                foundation in C# programming and Windows Forms, preparing me to
+                create complete, professional desktop applications.
+              </p>
+            </div>
+          </figure>
+
+          <!-- 15 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N15.png"
+              loading="lazy"
+              alt="Course N15"
+            />
+            <a href="#" aria-label="Open 17"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">Database – Level 1</span>Programming
+                Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: Database – Level 1 (SQL: Concepts & Practice)</h3>
+              <p>
+                In this course I learned the foundations of databases and how to
+                use SQL effectively as a core programming skill. I studied
+                database concepts, including NULL, redundancy, integrity,
+                constraints, and the difference between data structures and
+                databases. I practiced designing databases correctly using ERD,
+                converting them into relational schemas, and applying primary
+                and foreign keys. I learned to write SQL confidently, covering
+                DDL commands (Create, Alter, Drop), DML commands (Insert,
+                Update, Delete), and queries using Select, Where, Group By,
+                Having, and Joins. I also learned to use views and indexes
+                properly, apply normalization (1NF → 3NF and beyond), and
+                understand how design decisions affect database performance.
+                Through practical exercises and real examples, I gained
+                experience building database-driven applications and ensuring
+                they are scalable, efficient, and maintainable. This course
+                helped me master database design and SQL, saving development
+                time and preparing me for advanced backend and database courses.
+              </p>
+            </div>
+          </figure>
+
+          <!-- 16 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N16.png"
+              loading="lazy"
+              alt="Course N16"
+            />
+            <a href="#" aria-label="Open 18"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">OOP - C#</span>Programming Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: OOP as It Should Be in C#</h3>
+              <p>
+                In this course I learned how to apply object-oriented
+                programming principles correctly in C#. I practiced designing
+                classes and objects with proper encapsulation, using access
+                modifiers and properties instead of exposing fields. I learned
+                to work with constructors, destructors, static members, and
+                static classes effectively. I studied and applied the four OOP
+                principles—encapsulation, abstraction, inheritance, and
+                polymorphism—through small projects and exercises. I worked with
+                abstract classes, interfaces, method overriding vs hiding,
+                upcasting and downcasting, composition vs inheritance, sealed
+                classes, and partial classes. The course emphasized writing
+                clean, extensible, and maintainable OOP code, building reusable
+                class libraries, and making design decisions that control
+                complexity. It helped me bridge my theoretical OOP knowledge
+                into practical C# programming and prepared me for larger,
+                enterprise-level backend systems.
+              </p>
+            </div>
+          </figure>
+
+          <!-- 17 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N17.png"
+              loading="lazy"
+              alt="Course N17"
+            />
+            <a href="#" aria-label="Open 19"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">Database – SQL</span>Programming
+                Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: Database – SQL (Projects & Practice)</h3>
+              <p>
+                In this course I learned how to turn database knowledge into
+                real SQL mastery through hands-on projects. I practiced
+                designing complete databases from requirements, converting them
+                into ERDs and relational schemas, and applying normalization
+                correctly in real scenarios. I worked with real datasets and
+                learned how design choices affect performance and scalability. I
+                built fluency in SQL by solving 50+ practical problems covering
+                filtering, sorting, grouping, aggregation, complex joins,
+                subqueries, views, calculated columns, CASE statements, UNIONs,
+                EXISTS, and conditional logic. I also handled real-world
+                scenarios such as clinics, libraries, clubs, rentals, online
+                stores, self-referential relationships, GUID usage, and data
+                importing. The course emphasized professional, performance-aware
+                SQL, reinforcing habits for speed, confidence, and correctness,
+                preparing me to handle large, production-ready databases and
+                backend systems efficiently.
+              </p>
+            </div>
+          </figure>
+
+          <!-- 18 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N18.png"
+              loading="lazy"
+              alt="Course N18"
+            />
+            <a href="#" aria-label="Open 20"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">ADO.NET</span>Programming Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: C# & Database Connectivity (ADO.NET Foundations)</h3>
+              <p>
+                In this course I learned how C# applications communicate with
+                databases at a fundamental level using ADO.NET. I practiced
+                connecting C# projects to SQL Server, retrieving and
+                manipulating data with DataReader, DataTable, DataSet, and
+                DataView, and performing full CRUD operations safely using
+                parameterized queries. I also learned to handle filtering, IN
+                statements, and single-value retrieval with ExecuteScalar. The
+                course emphasized proper 3-tier architecture, separating
+                Presentation, Business, and Data Access layers, and building
+                real-world projects including console and Windows Forms
+                applications like a contacts management system. I gained deep
+                understanding of data access concepts, performance
+                considerations, and the differences between online/offline data
+                and speed/flexibility trade-offs. This foundation prepares me to
+                use ORMs such as Entity Framework efficiently, debug data access
+                issues, and write fast, maintainable, and secure backend code
+                without relying on tool-specific shortcuts.
+              </p>
+            </div>
+          </figure>
+
+          <!-- 19 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N19.png"
+              loading="lazy"
+              alt="Course N19"
+            />
+            <a href="#" aria-label="Open 21"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">Full Real Project</span>Programming
+                Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>
+                Course: Full Real Project – DVLD (Driving License Management
+                System)
+              </h3>
+              <p>
+                In this course I built a complete, production-style system — the
+                DVLD (Driving License Management System) — applying everything I
+                learned from programming foundations, OOP in C#, databases, and
+                ADO.NET. I designed the database schema, implemented a 3-tier
+                architecture with Presentation, Business, and Data Access
+                layers, and handled real workflows including user
+                authentication, login, permissions, and validation rules. I
+                implemented modules for people and user management, application
+                types, test types, license issuance, renewal, replacement,
+                detainment, international licenses, reports, and history
+                tracking. I learned how to translate requirements into tables,
+                enforce business rules correctly, and organize a large codebase
+                for readability and maintainability. This course reinforced
+                professional software development skills by showing how real
+                systems grow over time, how modules interact, and how clean
+                architecture, OOP, and database practices come together in a
+                complete, working application.
+              </p>
+            </div>
+          </figure>
+
+          <!-- 20 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N20.png"
+              loading="lazy"
+              alt="Course N20"
+            />
+            <a href="#" aria-label="Open 22"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">C# Level 2</span>Programming Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: C# Programming – Level 2</h3>
+              <p>
+                In this course I deepened my C# knowledge beyond syntax,
+                focusing on advanced programming concepts that make applications
+                robust, scalable, and maintainable. I mastered passing data
+                between forms, creating reusable User Controls, and implementing
+                events and delegates, including Func, Action, Predicate, and
+                lambda expressions. I worked with advanced topics such as
+                serialization (XML, JSON, Binary), attributes, reflection,
+                generics, operator overloading, nullable types, and mutable vs
+                immutable types. I learned resource management with using and
+                IDisposable, handled concurrency with multithreading,
+                async/await, Tasks, and parallel programming, and applied
+                Dependency Injection and the Open/Closed Principle. I also
+                explored system-level features like Windows Registry,
+                App.config, logging with Event Log, and calling stored
+                procedures via ADO.NET. Through practice, I gained the ability
+                to design, implement, and maintain complex C# systems — building
+                real-world applications that are efficient, flexible, and
+                enterprise-ready.
+              </p>
+            </div>
+          </figure>
+
+          <!-- 21 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N21.png"
+              loading="lazy"
+              alt="Course N21"
+            />
+            <a href="#" aria-label="Open 23"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">Database – Level 2</span>Programming
+                Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: Database – Level 2 (Concepts & T-SQL)</h3>
+              <p>
+                In this course I mastered T-SQL as a true programming language
+                inside the database. I learned to write procedural logic using
+                variables, IF/ELSE, CASE statements, WHILE loops, and control
+                blocks, and I handled errors safely with TRY…CATCH, THROW,
+                @@ERROR, and @@ROWCOUNT. I applied transactions to enforce
+                consistency, worked with temporary data using table variables
+                and temporary tables, and built reusable database logic with
+                stored procedures, scalar functions, and table-valued functions.
+                I also mastered advanced querying with window functions, paging,
+                and recursive CTEs, and automated database tasks with triggers
+                while following best security practices. I gained
+                performance-aware thinking by understanding indexing, execution
+                plans, and query optimization. Through real examples and
+                projects, I became confident in designing safe, reusable, and
+                high-performance database solutions — turning SQL from a query
+                tool into a true programming skill for enterprise and backend
+                systems.
+              </p>
+            </div>
+          </figure>
+
+          <!-- 22 -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course N22.png"
+              loading="lazy"
+              alt="Course N22"
+            />
+            <a href="#" aria-label="Open 24"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">DS – Level 2</span>Programming Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: Data Structures – Level 2 in C#</h3>
+              <p>
+                In this course I mastered advanced data structures in C# with a
+                focus on practical usage, performance, and correctness. I
+                learned to choose the right collection for each scenario,
+                understanding generic vs non-generic collections, avoiding
+                boxing/unboxing, and comparing key C# collections such as List,
+                ArrayList, Dictionary, Hashtable, HashSet, SortedSet,
+                SortedList, and ObservableCollection. I applied advanced
+                operations with arrays, including multidimensional and jagged
+                arrays, copying strategies, and LINQ integration, while working
+                with memory-efficient structures like BitArray. I implemented
+                modern language tools such as Tuples, and worked with collection
+                interfaces including IEnumerable, ICollection, IList,
+                IDictionary, ISet, creating custom collections and using
+                IComparable for sorting custom objects. I also gained a solid
+                understanding of advanced structures and algorithms including
+                Trees (general and binary) with traversals, Graphs (adjacency
+                matrix and list), Heaps (min-heap and max-heap), and Priority
+                Queues. Through examples, comparisons, and quizzes, I developed
+                a mindset to analyze trade-offs in speed, memory, and
+                simplicity, preparing myself for deep practice, backend
+                development, and high-performance systems in C#. This course
+                transformed my understanding from “knowing names” to confidently
+                choosing and using data structures in real applications.
+              </p>
+            </div>
+          </figure>
+
+          <!-- API -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course Introduction to RestFull API.png"
+              loading="lazy"
+              alt="Introduction to RESTful API"
+            />
+            <a href="#" aria-label="Open 25"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">API</span>Programming Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: Win32 API & Web APIs (RESTful APIs)</h3>
+              <p>
+                I learned how to use Win32 API in C# to access Windows system
+                features like windows, processes, battery, screen resolution,
+                and perform actions such as shutdown or message boxes. I also
+                practiced automating Office apps (Word, Excel, PowerPoint,
+                Outlook). Additionally, I learned RESTful APIs, HTTP methods
+                (GET, POST, PUT, DELETE), endpoints, headers, request/response
+                objects, and status codes, understanding how clients and servers
+                communicate and exchange data.
+              </p>
+            </div>
+          </figure>
+
+          <!-- HTML -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course HTML.png"
+              loading="lazy"
+              alt="HTML Course"
+            />
+            <a href="#" aria-label="Open 26"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">HTML</span>Programming Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: HTML – Deep Dive</h3>
+              <p>
+                In this course I mastered HTML as a true web foundation,
+                understanding how browsers parse and render pages, and why
+                semantics, accessibility, SEO, and performance depend entirely
+                on correct HTML. I learned to use semantic elements confidently,
+                handle text, images, links, forms, multimedia, graphics, and
+                metadata correctly, and structure documents for scalability and
+                maintainability. I applied performance-aware techniques such as
+                lazy loading, responsive images (srcset, picture), preloading
+                resources, and proper navigation structures. I built forms with
+                correct methods, validation, and encoding, and managed metadata
+                for SEO and social sharing. I also learned how HTML works with
+                CSS and JavaScript, creating accessible, meaningful, and
+                professional page structures. Through quizzes, examples, and
+                reasoning exercises, I developed a mindset to write HTML that
+                scales, performs well, and supports maintainable web projects.
+                This course transformed my understanding from “knowing tags” to
+                designing robust, browser-friendly, and high-quality HTML
+                foundations for real-world web development.
+              </p>
+            </div>
+          </figure>
+
+          <!-- Course Goals -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course Goals Settings.png"
+              loading="lazy"
+              alt="Goals Settings Course"
+            />
+            <a href="#" aria-label="Open 28"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">Goal-Setting</span>Management Dose</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>
+                Course: Goal-Setting Mastery – From Clarity to Achievement
+              </h3>
+              <p>
+                In this course, I mastered the science and psychology of
+                effective goal setting, learning how to define, plan, and
+                achieve meaningful objectives across every area of life. I
+                explored the foundations of goal-setting habits, assessed my
+                personal tendencies, and discovered how to align goals with my
+                energy, priorities, and real-life constraints. I learned to
+                apply the SMART framework to make goals Specific, Measurable,
+                Achievable, Relevant, and Time-bound, while avoiding common
+                pitfalls that derail progress. I explored the differences and
+                connections between short-term vs. long-term goals, personal vs.
+                professional goals, outcome vs. process goals, and performance
+                vs. learning goals. I also practiced setting stretch vs. comfort
+                goals, intrinsic vs. extrinsic goals, and individual vs. team
+                goals to maximize motivation and effectiveness. The course
+                deepened my understanding of psychological barriers, including
+                fear, perfectionism, procrastination, and burnout, and taught
+                strategies to overcome them. I gained insights into how the
+                brain sets and achieves goals, how motivation works, and how to
+                maintain progress sustainably. Through reflections, quizzes, and
+                a final capstone project, I built a personalized goal-setting
+                system designed for real-life application. This course
+                transformed my approach from vaguely wishing for outcomes to
+                systematically designing, pursuing, and achieving goals with
+                clarity, confidence, and consistency.
+              </p>
+            </div>
+          </figure>
+
+          <!-- CSS -->
+          <figure class="tile">
+            <img
+              class="thumb"
+              src="/Images/Course CSS.png"
+              loading="lazy"
+              alt="CSS Course"
+            />
+            <a href="#" aria-label="Open 27"></a>
+            <figcaption class="caption">
+              <span class="meta"
+                ><span class="chip">CSS</span>Programming Advices</span
+              >
+            </figcaption>
+            <div class="tile-description" hidden>
+              <h3>Course: CSS Foundations – Deep Dive</h3>
+              <p>
+                In this course I mastered CSS as a true styling system,
+                understanding how rules, specificity, inheritance, and the
+                cascade control page presentation. I learned to predict layout
+                behavior, apply modern layouts with Flexbox and Grid, control
+                spacing and typography, and style images, backgrounds,
+                gradients, shadows, and animations professionally. I practiced
+                responsive design with media queries, viewport units, and CSS
+                math functions, and I gained proficiency using DevTools to
+                inspect, debug, and optimize styles. I learned to build
+                maintainable and scalable CSS with variables, pseudo-elements,
+                and reusable patterns, ensuring layouts and components behave
+                consistently across browsers and devices. Through projects,
+                quizzes, and examples, I developed a mindset to write CSS
+                confidently and systematically, preparing myself for frameworks,
+                UI libraries, and large-scale web applications. This course
+                transformed my understanding from “knowing properties” to
+                controlling and structuring styles like a professional frontend
+                developer.
+              </p>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ── Lightbox Modal ── -->
+      <div class="lightbox-overlay" id="lightboxOverlay">
+        <div class="lightbox-window">
+          <button class="lightbox-close" id="lightboxClose">✕</button>
+          <div class="lightbox-body">
+            <div class="lightbox-img-wrap">
+              <img src="" alt="" id="lightboxImg" class="lightbox-img" />
+            </div>
+            <div class="lightbox-description">
+              <h3 id="lightboxDescTitle"></h3>
+              <p class="Scrollable" id="lightboxDescText"></p>
+            </div>
+          </div>
+          <div class="lightbox-footer">
+            <span class="lightbox-chip" id="lightboxChip"></span>
+            <span class="lightbox-title" id="lightboxTitle"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Projects ── -->
+      <section id="projects" class="projects">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="timeline">
+          <div class="timeline-item left">
+            <div class="timeline-text">
+              <div class="timeline-date">2025</div>
+              <h2>Bank Management Project</h2>
+              <div class="TMcard-tags">
+                <span class="TMtag">C++</span>
+                <span class="TMtag">OOP</span>
+                <span class="TMtag">console</span>
+                <span class="TMtag">fstream</span>
+              </div>
+              <p>
+                The Bank Management Project is a C++ console application
+                developed by El Mehdi Mhaoune. It simulates a basic banking
+                system, allowing management of users, clients, and transactions
+                using a file-based database. The project focuses on
+                object-oriented programming (OOP) principles, modular code
+                organization, and practical use of file handling (fstream) in
+                C++.
+              </p>
+              <div class="timelineButtonContainer">
+                <button id="BM_Btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                      d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  Source Code
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item right">
+            <div class="timeline-text">
+              <div class="timeline-date">2025</div>
+              <h2>Stone, Paper, Scissors Game</h2>
+              <div class="TMcard-tags">
+                <span class="TMtag">C#</span>
+                <span class="TMtag">.Net Framework</span>
+                <span class="TMtag">Windows Forms</span>
+              </div>
+              <p>
+                This is a simple Windows Forms application implemented in C# for
+                playing the classic game of Stone, Paper, Scissors (Rock, Paper,
+                Scissors) against the computer. The application allows users to
+                configure the number of rounds and tracks the score and progress
+                of the match until a winner is determined.
+              </p>
+              <div class="timelineButtonContainer">
+                <button id="SPS_Btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                      d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  Source Code
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item left">
+            <div class="timeline-text">
+              <div class="timeline-date">2025</div>
+              <h2>Tic-Tac-Toe Game</h2>
+              <div class="TMcard-tags">
+                <span class="TMtag">C#</span>
+                <span class="TMtag">WinForms</span>
+              </div>
+              <p>
+                A simple Tic-Tac-Toe (X-O) game built with C# and WinForms. This
+                project demonstrates basic game logic, UI design, and event
+                handling in Windows Forms.
+              </p>
+              <div class="timelineButtonContainer">
+                <button id="TTT_Btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                      d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  Source Code
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item right">
+            <div class="timeline-text">
+              <div class="timeline-date">2025</div>
+              <h2>Math Quiz Game</h2>
+              <div class="TMcard-tags">
+                <span class="TMtag">C#</span>
+                <span class="TMtag">WinForms</span>
+                <span class="TMtag">file DataBase</span>
+              </div>
+              <p>
+                This project is a Math Quiz Game built with C# and Windows
+                Forms. Players can choose the quiz level, math operation, number
+                of rounds, and an optional time limit. The game generates random
+                math questions with four answer options and tracks correct,
+                wrong, and skipped answers. At the end, a results screen shows
+                the player's performance and quiz details.
+              </p>
+              <div class="timelineButtonContainer">
+                <button id="MQ_Btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                      d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  Source Code
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item left">
+            <div class="timeline-text">
+              <div class="timeline-date">2025</div>
+              <h2>DVLD (Driving and Vehicle License Department) Project</h2>
+              <div class="TMcard-tags">
+                <span class="TMtag">C#</span>
+                <span class="TMtag">.NET Framework 4.7.3</span>
+                <span class="TMtag">OOP</span>
+                <span class="TMtag">WinForms</span>
+                <span class="TMtag">ADO.NET</span>
+                <span class="TMtag">SQL Server</span>
+                <span class="TMtag">Queries</span>
+                <span class="TMtag">3-tier architecture</span>
+              </div>
+              <p>
+                This project represents the Presentation Layer (PL) of the DVLD
+                (Driving and Vehicle License Department) system, developed using
+                C# WinForms (.NET) with Guna UI2 for a modern user interface.
+                The PL manages user interactions and communicates with the
+                Business Layer (BL) and Data Access Layer (DAL) using a 3-tier
+                architecture. The interface provides user-friendly forms, data
+                display using DataGridView, and integrates with the BL to apply
+                business rules. The DAL handles database operations using
+                ADO.NET with SQL Server and inline SQL queries.
+              </p>
+              <div class="timelineButtonContainer">
+                <button id="DVLD_Btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                      d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  Source Code
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item right">
+            <div class="timeline-text">
+              <div class="timeline-date">2025</div>
+              <h2>Stadium Booking Management System</h2>
+              <div class="TMcard-tags">
+                <span class="TMtag">C#</span>
+                <span class="TMtag">OOP</span>
+                <span class="TMtag">WinForms</span>
+                <span class="TMtag">SQL Server</span>
+                <span class="TMtag">ADO.NET</span>
+                <span class="TMtag">T-SQL</span>
+                <span class="TMtag">Guna UI2</span>
+                <span class="TMtag">stored procedures</span>
+                <span class="TMtag">3-tier architecture</span>
+                <span class="TMtag">.NET Framework 4.7.3</span>
+              </div>
+              <p>
+                Arena Whistle is a desktop application built with C# WinForms
+                and SQL Server to manage stadium bookings and sports facility
+                operations. The system allows administrators to manage stadiums,
+                bookings, users, employees, referees, and payments through a
+                modern interface built with Guna UI2. The application follows a
+                clean multi-layer architecture (PL, BLL, DAL). The Presentation
+                Layer handles the user interface, the Business Logic Layer
+                manages validation and business rules, and the Data Access Layer
+                communicates with the database using ADO.NET and SQL Server
+                stored procedures. Key features include stadium management with
+                multiple images, booking scheduling with overlap prevention,
+                role-based user permissions, payment and fine tracking, and
+                operation logging. The database contains 25+ tables with
+                advanced T-SQL features such as triggers, functions,
+                transactions, and error handling. This project demonstrates
+                practical use of OOP principles, database design, multi-layer
+                architecture, and real-world software development practices.
+              </p>
+              <div class="timelineButtonContainer">
+                <button id="Aw_Btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                      d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  Source Code
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Contacts ── -->
+      <section id="contacts" class="contacts">
+        <h2 class="section-title">Contacts</h2>
+        <div class="social-row">
+          <a href="https://www.linkedin.com/in/el-mehdi-mhaoune/">
+            <div class="social-icon linkedIn"></div>
+          </a>
+          <a
+            href="https://mail.google.com/mail/?view=cm&to=elmehdi.mhaoune@gmail.com&su=Hello%20El%20Mehdi&body=Hi%20El%20Mehdi,%0A%0A"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="social-icon Gmail"></div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>&copy; 2026 El Mehdi Mhaoune</p>
+    </footer>
+
+    <!-- ── Scroll To Top Button ── -->
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+      Scroll to Top
+    </button>
+  </body>
+</html>

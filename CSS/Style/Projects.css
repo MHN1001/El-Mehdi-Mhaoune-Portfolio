@@ -1,0 +1,344 @@
+/* ════════════════════════════════════════════════════════════════
+   PROJECTS SECTION
+   ════════════════════════════════════════════════════════════════ */
+
+.projects {
+  grid-area: projects;
+  position: relative;
+  justify-items: center;
+}
+
+/* ── Timeline wrapper ── */
+.projects .timeline {
+  position: relative;
+  width: min(90%, 1100px);
+  margin: clamp(16px, 3vh, 32px) auto 0;
+}
+
+/* Center vertical line */
+.projects .timeline::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--MagicColor) 8%,
+    var(--MagicColor) 92%,
+    transparent
+  );
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+/* ── Timeline item ── */
+.projects .timeline .timeline-item {
+  position: relative;
+  background: inherit;
+  width: 50%;
+  margin-bottom: clamp(18px, 3vh, 30px);
+  opacity: 0;
+  transition:
+    opacity var(--transition-xslow),
+    transform var(--transition-xslow);
+}
+
+.projects .timeline .timeline-item.left {
+  left: 0;
+  padding-right: clamp(20px, 3vw, 30px);
+  transform: translateX(-40px);
+}
+
+.projects .timeline .timeline-item.right {
+  left: 50%;
+  padding-left: clamp(20px, 3vw, 30px);
+  transform: translateX(40px);
+}
+
+/* Revealed by JS */
+.projects .timeline .timeline-item.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Circle dot ── */
+.projects .timeline .timeline-item::after {
+  content: "";
+  position: absolute;
+  width: clamp(12px, 1.2vw, 16px);
+  height: clamp(12px, 1.2vw, 16px);
+  top: 48px;
+  right: -9px;
+  background: #00ff3c;
+  border: 3px solid var(--primary-color-light);
+  border-radius: 50%;
+  z-index: var(--z-dot);
+  box-shadow: 0 0 0 2px #00ff4c;
+}
+
+.projects .timeline .timeline-item.right::after {
+  left: -9px;
+  right: auto;
+}
+
+/* ── Arrow pointer ── */
+.projects .timeline .timeline-item::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 46px;
+  right: clamp(8px, 1vw, 11px);
+  z-index: 1;
+  border: 10px solid;
+  border-color: transparent transparent transparent var(--border);
+}
+
+.projects .timeline .timeline-item.right::before {
+  left: clamp(8px, 1vw, 11px);
+  right: auto;
+  border-color: transparent var(--border) transparent transparent;
+}
+
+/* ── Date label ── */
+.projects .timeline .timeline-date {
+  position: absolute;
+  width: 100%;
+  top: 46px;
+  font-size: clamp(var(--fs-sm), 0.8rem + 0.2vw, var(--fs-body));
+  font-weight: var(--fw-semibold);
+  color: var(--section-title-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.projects .timeline .timeline-item.left .timeline-date {
+  text-align: left;
+  left: calc(100% + clamp(36px, 4vw, 55px));
+}
+
+.projects .timeline .timeline-item.right .timeline-date {
+  text-align: right;
+  right: calc(100% + clamp(36px, 4vw, 55px));
+  left: auto;
+}
+
+/* ── Text card ── */
+.projects .timeline .timeline-text {
+  padding: clamp(16px, 2.5vw, 30px) clamp(16px, 2.5vw, 30px) 0;
+  background: var(--primary-color-light);
+  position: relative;
+  border-right: 5px solid var(--border);
+  border-bottom: 5px solid var(--border);
+  box-shadow: var(--shadow-glow);
+  border-radius: var(--radius-sm, 6px);
+  transition: box-shadow 0.28s ease;
+}
+
+.projects .timeline-item.left .timeline-text:hover {
+  box-shadow: 20px 20px 30px var(--MagicColor-dim);
+}
+
+.projects .timeline-item.right .timeline-text:hover {
+  box-shadow: -20px 20px 30px var(--MagicColor-dim);
+}
+
+.projects .timeline .timeline-item.right .timeline-text {
+  border-right: none;
+  border-left: 5px solid var(--border);
+  border-bottom: 5px solid var(--border);
+}
+
+.projects .timeline .timeline-text h2 {
+  margin: 0 0 5px 0;
+  font-size: clamp(var(--fs-lg), 1rem + 0.5vw, var(--fs-xl));
+  font-weight: var(--fw-semibold);
+  color: var(--section-title-color);
+}
+
+.projects .timeline .timeline-text h4 {
+  margin: 0 0 clamp(6px, 1vh, 10px) 0;
+  font-size: clamp(var(--fs-base), 0.85rem + 0.2vw, var(--fs-body));
+  font-style: italic;
+  font-weight: 400;
+}
+
+.projects .timeline .timeline-text p {
+  margin: 0;
+  font-size: clamp(var(--fs-base), 0.85rem + 0.2vw, var(--fs-body));
+  line-height: var(--lh-relaxed);
+  color: var(--section-title-color);
+}
+
+/* ── Tags ── */
+.TMcard-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-self: start;
+  margin: clamp(6px, 1vh, 10px) 0;
+}
+
+.TMtag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: clamp(3px, 0.5vh, 5px) clamp(8px, 1.2vw, 13px);
+  border-radius: var(--radius-pill);
+  background: var(--MagicColor-bg);
+  border: 1.3px solid rgb(165, 166, 165);
+  font-size: clamp(var(--fs-xs), 0.72rem + 0.1vw, var(--fs-sm));
+  font-weight: var(--fw-semibold);
+  color: var(--ink);
+  letter-spacing: var(--ls-normal);
+  z-index: 10;
+}
+
+/* ── Button container ── */
+.timelineButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: clamp(0px, 1vw, 8px);
+}
+
+.timelineButtonContainer button {
+  z-index: var(--z-dot);
+  pointer-events: auto;
+  cursor: pointer;
+  background: color-mix(in oklab, var(--accent) 12%, var(--surface));
+  color: var(--accent);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: clamp(0.3rem, 0.6vh, 0.38rem) clamp(0.7rem, 1.2vw, 0.9rem);
+  font-size: clamp(0.75rem, 0.72rem + 0.1vw, 0.82rem);
+  font-weight: var(--fw-bold);
+  user-select: none;
+  box-shadow: var(--shadow);
+  margin: clamp(12px, 2vh, 20px) 0;
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    transform 0.15s,
+    box-shadow var(--transition-base);
+}
+
+.timelineButtonContainer button:hover {
+  background: var(--accent);
+  color: var(--primary-color-light);
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px color-mix(in oklab, var(--accent) 30%, transparent);
+}
+
+.timelineButtonContainer button svg {
+  width: clamp(12px, 1vw, 14px);
+  height: clamp(12px, 1vw, 14px);
+  margin-right: 6px;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .projects .timeline {
+    width: 95%;
+  }
+  .projects .timeline .timeline-item.left .timeline-date,
+  .projects .timeline .timeline-item.right .timeline-date {
+    font-size: var(--fs-sm);
+  }
+}
+
+/* Single column — line on left */
+@media (max-width: 767px) {
+  .projects .timeline::after {
+    left: clamp(10px, 3vw, 14px);
+    margin-left: 0;
+  }
+
+  .projects .timeline .timeline-item {
+    width: 100%;
+    padding-left: clamp(28px, 6vw, 42px);
+    padding-right: 0;
+    left: 0 !important;
+  }
+
+  .projects .timeline .timeline-item.left {
+    padding-right: 0;
+  }
+  .projects .timeline .timeline-item.right {
+    padding-left: clamp(28px, 6vw, 42px);
+  }
+
+  .projects .timeline .timeline-item.left::after,
+  .projects .timeline .timeline-item.right::after {
+    left: clamp(2px, 1vw, 4px);
+    right: auto;
+  }
+
+  .projects .timeline .timeline-item.left::before,
+  .projects .timeline .timeline-item.right::before {
+    left: clamp(16px, 4vw, 22px);
+    right: auto;
+    border-color: transparent var(--border) transparent transparent;
+  }
+
+  .projects .timeline .timeline-item.left .timeline-date,
+  .projects .timeline .timeline-item.right .timeline-date {
+    position: relative;
+    top: 0;
+    right: auto;
+    left: 0;
+    text-align: left;
+    margin-bottom: clamp(6px, 1.5vh, 10px);
+    font-size: var(--fs-sm);
+    white-space: normal;
+  }
+
+  .projects .timeline .timeline-item.left .timeline-text,
+  .projects .timeline .timeline-item.right .timeline-text {
+    border-right: none;
+    border-left: 5px solid var(--border);
+  }
+
+  /* slide up on mobile */
+  .projects .timeline .timeline-item.left,
+  .projects .timeline .timeline-item.right {
+    transform: translateY(30px);
+  }
+  .projects .timeline .timeline-item.show {
+    transform: translateY(0);
+  }
+
+  .projects .timeline-item.left .timeline-text:hover,
+  .projects .timeline-item.right .timeline-text:hover {
+    box-shadow: 0 12px 24px var(--MagicColor-dim);
+  }
+}
+
+@media (max-width: 400px) {
+  .projects .timeline {
+    width: 100%;
+  }
+  .projects .timeline .timeline-text {
+    padding: 12px 12px 0;
+  }
+  .TMtag {
+    font-size: var(--fs-xs);
+    padding: 3px 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects .timeline .timeline-item,
+  .projects .timeline .timeline-text {
+    transition: none !important;
+    animation: none !important;
+  }
+}

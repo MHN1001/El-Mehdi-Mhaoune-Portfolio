@@ -1,0 +1,85 @@
+/* ── Entrance Animation ── */
+@keyframes eduSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(calc(var(--space-3) * -1));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.edu-card {
+  animation: eduSlideIn var(--transition-reveal) both;
+  animation-delay: calc(var(--i) * 0.1s);
+}
+
+/* ── Body Expand Animation ── */
+@keyframes eduExpand {
+  from {
+    opacity: 0;
+    transform: translateY(calc(var(--space-1) * -1));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.edu-card[open] .edu-body {
+  animation: eduExpand var(--transition-slow) both;
+}
+
+/* ── Dot Pulse (timeline dot on hover) ── */
+@keyframes dotPulse {
+  0% {
+    box-shadow:
+      0 0 0 3px var(--card),
+      0 0 0 5px var(--MagicColor);
+  }
+  50% {
+    box-shadow:
+      0 0 0 3px var(--card),
+      0 0 0 8px var(--MagicColor-dim);
+  }
+  100% {
+    box-shadow:
+      0 0 0 3px var(--card),
+      0 0 0 5px var(--MagicColor);
+  }
+}
+
+.edu-card:hover::before {
+  animation: dotPulse 1.2s var(--transition-base) infinite;
+}
+
+/* ── Icon bounce on open ── */
+@keyframes iconPop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.18);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.edu-card[open] .edu-icon {
+  animation: iconPop var(--transition-slow) both;
+}
+
+/* ── Reduced Motion (Accessibility) ── */
+@media (prefers-reduced-motion: reduce) {
+  .edu-card,
+  .edu-card[open] .edu-body,
+  .edu-card[open] .edu-icon {
+    animation: none !important;
+    transition: none !important;
+  }
+}

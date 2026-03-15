@@ -1,0 +1,352 @@
+/* ════════════════════════════════════════════════════════════════
+   MAIN PICTURE SECTION
+   ════════════════════════════════════════════════════════════════ */
+
+.MainPicture {
+  grid-area: general;
+  position: relative;
+  height: 100svh;
+  min-height: clamp(480px, 60vh, 700px);
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Background image ──
+   object-position: 30% center keeps the face on the left third
+   of the frame, leaving the right side open for the info card     */
+.bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 30% center;
+  z-index: 0;
+  filter: saturate(1.05) contrast(1.06);
+  box-shadow: var(--bgShadowFg);
+  transition: filter var(--transition-xslow);
+  will-change: filter;
+}
+
+/* ── Filter presets ── */
+.bg.filter-none {
+  filter: saturate(1.05) contrast(1.06);
+}
+.bg.filter-cinematic {
+  filter: contrast(1.15) saturate(0.75) sepia(0.2) brightness(0.88);
+}
+.bg.filter-mono {
+  filter: grayscale(1) contrast(1.1) brightness(0.95);
+}
+.bg.filter-warm {
+  filter: sepia(0.35) saturate(1.4) brightness(1.05) contrast(1.05);
+}
+.bg.filter-cold {
+  filter: saturate(0.8) hue-rotate(185deg) brightness(0.95) contrast(1.08);
+}
+
+/* ── Gradient overlay ──
+   On desktop: strong left-side fade so card on right stays readable
+   Combined with bottom fade for scroll hint legibility             */
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.05) 60%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.55) 100%);
+  pointer-events: none;
+}
+
+/* ── Filter bar ── */
+.filter-bar {
+  position: absolute;
+  top: clamp(var(--space-4), 3vh, var(--space-5));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--space-2);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-pill);
+  padding: clamp(4px, 0.8vw, 6px) clamp(6px, 1vw, 10px);
+  max-width: 95vw;
+  overflow-x: auto;
+  scrollbar-width: none;
+  white-space: nowrap;
+}
+
+.filter-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-btn {
+  padding: clamp(4px, 0.6vh, 6px) clamp(10px, 1.5vw, 16px);
+  border-radius: var(--radius-pill);
+  border: none;
+  background: transparent;
+  color: var(--text-dimmer);
+  font-size: clamp(11px, 0.75rem + 0.1vw, 12.5px);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    transform 0.15s;
+}
+
+.filter-btn:hover {
+  color: var(--primary-color-light);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.filter-btn.active {
+  background: var(--MagicColor, cyan);
+  color: #000;
+}
+
+/* ── Info card ── */
+.card {
+  position: absolute;
+  right: clamp(1rem, 5vw, 5vw);
+  top: 54%;
+  transform: translateY(-50%);
+  z-index: 5;
+  max-width: clamp(280px, 40vw, 480px);
+  width: clamp(260px, 42vw, 480px);
+  padding: clamp(1.2rem, 2.5vw, 2rem) clamp(1.2rem, 2.5vw, 2rem)
+    clamp(1rem, 2vw, 1.6rem);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--primary-color-light);
+}
+
+.card-eyebrow {
+  font-size: clamp(10px, 0.7rem + 0.1vw, 11.5px);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--MagicColor, rgb(0, 255, 68));
+  margin-bottom: clamp(6px, 1vh, 10px);
+  opacity: 0.9;
+}
+
+.title {
+  font-size: clamp(1.6rem, 2.5vw + 1rem, 3rem);
+  font-weight: var(--fw-black);
+  line-height: var(--lh-tight);
+  margin-bottom: clamp(0.6rem, 1.5vh, 1rem);
+  color: #ffffff;
+  letter-spacing: var(--ls-tight);
+}
+
+.title-accent {
+  color: var(--MagicColor, rgb(0, 255, 55));
+}
+
+.description {
+  font-size: clamp(var(--fs-sm), 0.85rem + 0.2vw, var(--fs-md));
+  line-height: var(--lh-relaxed);
+  color: var(--text-dim);
+  margin-bottom: clamp(0.8rem, 2vh, 1.4rem);
+}
+
+/* ── Tags ── */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: clamp(3px, 0.5vh, 5px) clamp(8px, 1.2vw, 13px);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: clamp(10px, var(--fs-sm), 12px);
+  font-weight: var(--fw-semibold);
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: var(--ls-normal);
+}
+
+/* ── Scroll hint ── */
+.scroll-hint {
+  position: absolute;
+  bottom: clamp(var(--space-4), 3vh, var(--space-5));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  color: rgb(13, 255, 0);
+}
+
+.scroll-label {
+  font-size: clamp(9px, 0.65rem + 0.1vw, 10.5px);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+}
+
+.scroll-arrow {
+  font-size: var(--fs-lg);
+  animation: scrollBounce 1.6s ease infinite;
+}
+
+@keyframes scrollBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── PC (≥ 1025px): landscape, card right ── */
+@media (min-width: 1025px) {
+  .bg {
+    object-position: 30% center;
+  }
+  .card {
+    right: clamp(1rem, 5vw, 5vw);
+    left: auto;
+    top: 54%;
+    transform: translateY(-50%);
+    width: clamp(280px, 38vw, 480px);
+  }
+}
+
+/* ── Large tablet (769px – 1024px): landscape, card centered ── */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .bg {
+    object-position: center center;
+  }
+  .bg-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.68) 100%
+    );
+  }
+  .card {
+    left: 20v;
+
+    top: 54%;
+    transform: translate(-50%, -50%);
+    width: clamp(320px, 65vw, 560px);
+    max-width: 65vw;
+  }
+  .title {
+    font-size: clamp(1.6rem, 3vw + 0.5rem, 2.4rem);
+  }
+  .scroll-hint {
+    display: none;
+  }
+}
+
+/* ── Small tablet (641px – 768px): landscape, card centered ── */
+@media (max-width: 768px) and (min-width: 641px) {
+  .bg {
+    object-position: center center;
+  }
+  .bg-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.72) 100%
+    );
+  }
+  .card {
+    left: 20vw;
+    top: 54%;
+    transform: translate(-50%, -50%);
+    width: clamp(300px, 82vw, 500px);
+    max-width: 88vw;
+    padding: clamp(1rem, 2.5vw, 1.6rem);
+  }
+  .title {
+    font-size: clamp(1.4rem, 4vw + 0.5rem, 2rem);
+  }
+  .scroll-hint {
+    display: none;
+  }
+}
+
+/* ── Phone (≤ 640px):
+   portrait image — face fills top, card pinned to bottom center  ── */
+@media (max-width: 640px) {
+  .MainPicture {
+    height: 100vh;
+    min-height: 600px;
+    display: grid;
+    column-count: 1;
+    grid-row: 2;
+    grid-template-areas: "Bg" "description";
+  }
+
+  /* switch to portrait image */
+  .bg {
+    grid-area: "Bg";
+    content: url("/Images/MypictureForPhoneAndTablet.jpg");
+    object-position: center top;
+  }
+
+  /* heavy bottom fade so card text is readable */
+  .bg-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.1) 20%,
+      rgba(0, 0, 0, 0.78) 100%,
+      rgba(0, 0, 0, 0.93) 100%
+    );
+  }
+
+  .card {
+    display: none;
+  }
+
+  .card-tags {
+    justify-content: center;
+  }
+  .title {
+    font-size: clamp(1.2rem, 5vw, 1.7rem);
+  }
+  .description {
+    font-size: var(--fs-sm);
+  }
+  .scroll-hint {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-arrow {
+    animation: none;
+  }
+  .bg {
+    transition: none !important;
+  }
+}
