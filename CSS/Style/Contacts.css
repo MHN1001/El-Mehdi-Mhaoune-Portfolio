@@ -1,11 +1,6 @@
-/* ════════════════════════════════════════════════════════════════
-   CONTACTS SECTION
-   ════════════════════════════════════════════════════════════════ */
-
 .contacts {
   grid-area: contacts;
   justify-items: center;
-  padding-top: 10vh;
 }
 
 /* ── Social icon row ── */
@@ -21,83 +16,82 @@
 .social-row a {
   display: inline-block;
   line-height: 0;
+  padding-top: 1vh;
 }
 
 /* ════════════════════════════════════════════════════════════════
-   SOCIAL ICON — shared base
-   NEVER set background-size — sprite positions are pixel-exact.
+   SOCIAL ICON — shared base (SVG-based, no sprite)
    ════════════════════════════════════════════════════════════════ */
 
 .social-icon {
-  display: block;
-  width: 50px;
-  height: 50px;
-  background-image: url("/Images/Social-media-Image.webp");
-  background-repeat: no-repeat;
-  /* NO background-size — sprite is pixel-perfect at natural size */
-  transform: perspective(1000px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-sizing: border-box;
+
+  transform: perspective(1000px) translateY(0) scale(1);
   transform-style: preserve-3d;
-  transition: all 400ms ease-in-out;
+  transition:
+    transform 350ms ease,
+    box-shadow 350ms ease,
+    background 350ms ease;
   cursor: pointer;
 }
 
-/* ── Original hover: rotate -90deg ── */
-.social-icon:hover {
-  transform: perspective(1000px) rotate(-90deg);
+.social-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 8px;
 }
 
-/* ── Normal state (top row, y = 0) ── */
-
-.linkedIn {
-  background-position: -114px 0px;
-}
-
-.Gmail {
-  background-position: -337px -1px;
-}
-
+/* ── LinkedIn hover ── */
 .linkedIn:hover {
-  background-position: -114px -64px;
+  transform: perspective(1000px) translateY(-6px) scale(1.1);
+  background: rgba(10, 102, 194, 0.15);
+  box-shadow:
+    0 8px 24px rgba(10, 102, 194, 0.5),
+    0 0 12px rgba(10, 102, 194, 0.3);
 }
 
+/* ── Gmail hover ── */
 .Gmail:hover {
-  background-position: -337px -64px;
+  transform: perspective(1000px) translateY(-6px) scale(1.1);
+  background: rgba(66, 133, 244, 0.12);
+  box-shadow:
+    0 8px 24px rgba(66, 133, 244, 0.45),
+    0 0 12px rgba(234, 67, 53, 0.25);
+}
+
+/* ── WhatsApp hover ── */
+.WhatsApp:hover {
+  transform: perspective(1000px) translateY(-6px) scale(1.1);
+  background: rgba(37, 211, 102, 0.12);
+  box-shadow:
+    0 8px 24px rgba(37, 211, 102, 0.5),
+    0 0 12px rgba(37, 211, 102, 0.3);
 }
 
 /* ════════════════════════════════════════════════════════════════
    RESPONSIVE
    ════════════════════════════════════════════════════════════════ */
 
-/* On touch screens disable 3-D rotate (no hover state to reset it) */
 @media (max-width: 480px) {
   .social-icon {
+    width: 46px;
+    height: 46px;
     transition: opacity 200ms ease;
   }
   .social-icon:hover {
     transform: none;
     opacity: 0.75;
-  }
-  /* still swap sprite row on tap */
-  .faceBook:hover {
-    background-position: 0px -64px;
-  }
-  .rss:hover {
-    background-position: -57px -64px;
-  }
-  .linkedIn:hover {
-    background-position: -114px -64px;
-  }
-  .pint:hover {
-    background-position: -171px -64px;
-  }
-  .share:hover {
-    background-position: -227px -64px;
-  }
-  .youtube:hover {
-    background-position: -282px -64px;
-  }
-  .Gmail:hover {
-    background-position: -337px -64px;
+    box-shadow: none;
   }
 }
 

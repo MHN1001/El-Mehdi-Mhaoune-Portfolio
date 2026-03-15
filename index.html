@@ -33,18 +33,13 @@
 
   <body>
     <nav>
+      <!-- ══════════════════════════════════════════════════════════════
+     NAVBAR — updated HTML
+     ══════════════════════════════════════════════════════════════ -->
       <div class="nav-inner">
         <a class="nav-brand" href="#general">MHN</a>
 
-        <ul>
-          <li><a href="#general">General</a></li>
-          <li><a href="#TopSkills">Top Skills</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#certifications">Courses</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contacts">Contacts</a></li>
-        </ul>
-
+        <!-- Theme toggle (visible always, moves based on screen size via CSS order) -->
         <button
           id="themeToggle"
           class="theme-toggle"
@@ -60,6 +55,28 @@
           </svg>
           <span>Toggle Theme</span>
         </button>
+
+        <!-- Hamburger button (mobile only) -->
+        <button
+          id="menuToggle"
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-label="Toggle navigation menu"
+        >
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+
+        <ul id="navMenu">
+          <li><a href="#general">General</a></li>
+          <li><a href="#TopSkills">Top Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contacts">Contacts</a></li>
+        </ul>
       </div>
     </nav>
 
@@ -1439,7 +1456,7 @@
         <div class="timeline">
           <div class="timeline-item left">
             <div class="timeline-text">
-              <div class="timeline-date">2025</div>
+              <div class="timeline-date">08 /2024</div>
               <h2>Bank Management Project</h2>
               <div class="TMcard-tags">
                 <span class="TMtag">C++</span>
@@ -1471,7 +1488,7 @@
 
           <div class="timeline-item right">
             <div class="timeline-text">
-              <div class="timeline-date">2025</div>
+              <div class="timeline-date">02 / 2025</div>
               <h2>Stone, Paper, Scissors Game</h2>
               <div class="TMcard-tags">
                 <span class="TMtag">C#</span>
@@ -1500,7 +1517,7 @@
 
           <div class="timeline-item left">
             <div class="timeline-text">
-              <div class="timeline-date">2025</div>
+              <div class="timeline-date">02 / 2025</div>
               <h2>Tic-Tac-Toe Game</h2>
               <div class="TMcard-tags">
                 <span class="TMtag">C#</span>
@@ -1526,7 +1543,7 @@
 
           <div class="timeline-item right">
             <div class="timeline-text">
-              <div class="timeline-date">2025</div>
+              <div class="timeline-date">03 / 2025</div>
               <h2>Math Quiz Game</h2>
               <div class="TMcard-tags">
                 <span class="TMtag">C#</span>
@@ -1556,7 +1573,7 @@
 
           <div class="timeline-item left">
             <div class="timeline-text">
-              <div class="timeline-date">2025</div>
+              <div class="timeline-date">06 / 2025</div>
               <h2>DVLD (Driving and Vehicle License Department) Project</h2>
               <div class="TMcard-tags">
                 <span class="TMtag">C#</span>
@@ -1594,7 +1611,7 @@
 
           <div class="timeline-item right">
             <div class="timeline-text">
-              <div class="timeline-date">2025</div>
+              <div class="timeline-date">11 / 2025</div>
               <h2>Stadium Booking Management System</h2>
               <div class="TMcard-tags">
                 <span class="TMtag">C#</span>
@@ -1642,19 +1659,98 @@
         </div>
       </section>
 
-      <!-- ── Contacts ── -->
+      <!-- ══════════════════════════════════════════════════════════════
+     CONTACTS SECTION — updated HTML
+     ══════════════════════════════════════════════════════════════ -->
       <section id="contacts" class="contacts">
         <h2 class="section-title">Contacts</h2>
         <div class="social-row">
-          <a href="https://www.linkedin.com/in/el-mehdi-mhaoune/">
-            <div class="social-icon linkedIn"></div>
+          <!-- LinkedIn -->
+          <a
+            href="https://www.linkedin.com/in/el-mehdi-mhaoune/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="social-icon linkedIn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 100 100"
+                width="100%"
+                height="100%"
+              >
+                <rect width="100" height="100" rx="14" fill="#0A66C2" />
+                <rect x="14" y="38" width="16" height="48" fill="white" />
+                <circle cx="22" cy="24" r="9" fill="white" />
+                <path
+                  d="M42 38h15v6.6c2-3.8 7-7.2 15-7.2 16 0 19 10.5 19 24.2V86H76V65c0-6-.1-13.8-8.4-13.8-8.4 0-9.7 6.6-9.7 13.3V86H42V38z"
+                  fill="white"
+                />
+              </svg>
+            </div>
           </a>
+
+          <!-- Gmail -->
           <a
             href="https://mail.google.com/mail/?view=cm&to=elmehdi.mhaoune@gmail.com&su=Hello%20El%20Mehdi&body=Hi%20El%20Mehdi,%0A%0A"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div class="social-icon Gmail"></div>
+            <div class="social-icon Gmail">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 100 80"
+                width="100%"
+                height="100%"
+              >
+                <rect
+                  x="2"
+                  y="2"
+                  width="96"
+                  height="76"
+                  rx="4"
+                  fill="white"
+                  stroke="#ccc"
+                  stroke-width="1"
+                />
+                <polygon points="2,6 2,74 34,50" fill="#EA4335" />
+                <polygon points="98,6 98,74 66,50" fill="#34A853" />
+                <polygon points="2,74 34,50 66,50 98,74" fill="#FBBC04" />
+                <polygon points="2,6 50,46 98,6" fill="#4285F4" />
+              </svg>
+            </div>
+          </a>
+
+          <!-- WhatsApp -->
+          <a
+            href="https://wa.me/0676690936"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="social-icon WhatsApp">
+              <svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 300 300"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="0"
+                  y="0"
+                  width="300"
+                  height="300"
+                  rx="64"
+                  fill="#25D366"
+                />
+                <path
+                  d="M150 58 C99 58, 58 99, 58 150 C58 169, 64 187, 74 202 L60 248 L108 234 C123 242, 136 246, 150 246 C201 246, 242 205, 242 154 C242 103, 201 58, 150 58 Z"
+                  fill="white"
+                />
+                <path
+                  d="M119 107 C114 107, 106 112, 104 121 C101 133, 104 150, 116 167 C128 184, 145 196, 162 201 C172 204, 182 202, 188 196 C193 191, 194 184, 191 179 L180 165 C178 161, 173 160, 169 162 L159 167 C156 169, 152 168, 149 165 C143 159, 137 151, 133 143 C130 137, 131 133, 134 130 L139 122 C141 118, 140 113, 136 111 L123 107 C122 107, 120 107, 119 107 Z"
+                  fill="#25D366"
+                />
+              </svg>
+            </div>
           </a>
         </div>
       </section>

@@ -115,3 +115,24 @@ document
     applyTheme(next);
   });
 })();
+
+// ══════════════════════════════════════════════════════════════
+//  JS — hamburger toggle (add to your script file)
+//══════════════════════════════════════════════════════════════
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = navMenu.classList.toggle("nav-open");
+  menuToggle.setAttribute("aria-expanded", isOpen);
+  menuToggle.classList.toggle("is-open", isOpen);
+});
+
+// Close menu when a link is clicked
+navMenu.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("nav-open");
+    menuToggle.setAttribute("aria-expanded", false);
+    menuToggle.classList.remove("is-open");
+  });
+});

@@ -182,7 +182,7 @@
 
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
   --shadow-glow: 0 20px 60px var(--accent);
-  --shadow-glow-hover: 0 30px 50px var(--accent);
+  --shadow-glow-hover: 0 0px 0px var(--accent);
   --shadow-card: 0 0 60px var(--accent);
   --shadow-lightbox: 0 40px 100px rgba(0, 0, 0, 0.9);
   --shadow-nav: 0 2px 20px rgba(0, 0, 0, 0.7);
@@ -284,6 +284,7 @@ nav {
   position: relative;
 }
 
+/* Brand — far left */
 .nav-brand {
   font-size: clamp(1rem, 0.9rem + 0.5vw, 1.3rem);
   font-weight: var(--fw-black);
@@ -293,6 +294,7 @@ nav {
   position: relative;
   flex-shrink: 0;
   z-index: 1;
+  order: 0;
 }
 
 .nav-brand::after {
@@ -313,6 +315,7 @@ nav {
   transform: scaleX(1);
 }
 
+/* Nav links — centered on desktop */
 nav ul {
   position: absolute;
   left: 50%;
@@ -323,6 +326,7 @@ nav ul {
   padding: 0;
   margin: 0;
   gap: clamp(0rem, 0.5vw, 0.2rem);
+  order: 1;
 }
 
 nav li {
@@ -367,7 +371,7 @@ nav a.active {
   color: var(--nav-Footer-Txt);
 }
 
-/* ── Theme Toggle ── */
+/* ── Theme Toggle — far right on desktop ── */
 .theme-toggle {
   position: relative;
   z-index: 1;
@@ -384,6 +388,7 @@ nav a.active {
   font-weight: var(--fw-semibold);
   flex-shrink: 0;
   white-space: nowrap;
+  order: 2;
   transition:
     background var(--transition-base),
     box-shadow var(--transition-base),
@@ -404,6 +409,59 @@ nav a.active {
 
 .theme-toggle span {
   display: inline;
+}
+
+/* ── Hamburger button — hidden on desktop ── */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 1.5px solid var(--nav-Footer-Txt);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  padding: 6px;
+  flex-shrink: 0;
+  order: 3;
+  transition:
+    background var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.menu-toggle:hover {
+  background: var(--nav-Footer-Txt);
+  box-shadow: 0 0 10px var(--nav-Footer-Txt);
+}
+
+.menu-toggle:hover .hamburger-bar {
+  background: var(--nav-Footer-bg);
+}
+
+.hamburger-bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--nav-Footer-Txt);
+  border-radius: 2px;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* Animate to X when open */
+.menu-toggle.is-open .hamburger-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle.is-open .hamburger-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.menu-toggle.is-open .hamburger-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 @keyframes navDrop {
@@ -443,7 +501,7 @@ nav a.active {
   padding: clamp(8px, 1.2vw, 12px) clamp(12px, 2vw, 20px);
   border-radius: var(--radius-pill);
   border: 1.5px solid var(--border);
-  background: var(nav);
+  background: white;
   color: var(--accent);
   font-size: var(--fs-md);
   font-weight: var(--fw-bold);
@@ -542,70 +600,77 @@ nav a.active {
 }
 
 @media (max-width: 768px) {
-  .theme-toggle span {
-    display: none;
-  }
-  .theme-toggle {
-    padding: 6px 8px;
-  }
-  section {
-    padding: clamp(28px, 5vh, 50px) clamp(0.75rem, 3vw, 1.5rem);
-  }
-}
-
-@media (max-width: 640px) {
   .nav-inner {
     flex-wrap: wrap;
     height: auto;
-    padding: 8px 0.75rem;
-    gap: 4px;
+    padding: 15px;
+    /* Logo left | theme-toggle + hamburger right */
   }
 
+  /* Hide the text label on mobile to keep button compact */
+  .theme-toggle span {
+    display: none;
+  }
+
+  /* Theme toggle: right of logo, left of hamburger */
+  .theme-toggle {
+    order: 2;
+    padding: 6px 10px;
+    margin-right: auto;
+  }
+
+  /* Hamburger: far right */
+  .menu-toggle {
+    display: flex;
+    order: 3;
+  }
+
+  /* Nav ul: hidden by default, full-width dropdown below nav bar */
   nav ul {
     position: static;
     transform: none;
-    order: 3;
+    flex-direction: column;
+    align-items: stretch;
     width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
+    order: 4;
     gap: 0;
-    padding: 4px 0 6px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      max-height 0.35s ease,
+      opacity 0.3s ease;
   }
 
-  .nav-brand {
-    order: 1;
-  }
-  .theme-toggle {
-    order: 2;
-    margin-left: auto;
+  nav ul.nav-open {
+    max-height: 400px;
+    opacity: 1;
+    pointer-events: auto;
   }
 
-  nav a {
-    font-size: 0.72rem;
-    padding: 5px 7px;
+  nav ul li {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  nav ul a {
+    display: block;
+    padding: 12px clamp(1rem, 3vw, 2rem);
+    font-size: var(--fs-base);
   }
 
   nav ul a::after {
-    left: 7px;
-    right: 7px;
-  }
-
-  .scroll-top-btn {
-    bottom: 16px;
-    right: 16px;
-    padding: 8px 14px;
-    font-size: var(--fs-sm);
+    left: clamp(1rem, 3vw, 2rem);
+    right: clamp(1rem, 3vw, 2rem);
   }
 }
 
-@media (max-width: 380px) {
-  nav a {
-    font-size: 0.65rem;
-    padding: 4px 5px;
-  }
-  .section-title {
-    letter-spacing: 0.05em;
+@media (prefers-reduced-motion: reduce) {
+  nav ul,
+  .hamburger-bar,
+  .menu-toggle {
+    transition: none !important;
   }
 }
 
