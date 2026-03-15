@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" width="200" height="160">
+  <!-- Outer envelope border -->
+  <rect x="2" y="2" width="96" height="76" rx="4" fill="white" stroke="#ccc" stroke-width="1"/>
+  <!-- Red left flap -->
+  <polygon points="2,6 2,74 34,50" fill="#EA4335"/>
+  <!-- Green right flap -->
+  <polygon points="98,6 98,74 66,50" fill="#34A853"/>
+  <!-- Yellow bottom -->
+  <polygon points="2,74 34,50 66,50 98,74" fill="#FBBC04"/>
+  <!-- Blue top M shape -->
+  <polygon points="2,6 50,46 98,6" fill="#4285F4"/>
+</svg>

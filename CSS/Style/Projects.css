@@ -71,11 +71,11 @@
   height: clamp(12px, 1.2vw, 16px);
   top: 48px;
   right: -9px;
-  background: #00ff3c;
-  border: 3px solid var(--primary-color-light);
+  background: var(--nav-Footer-bg);
+  border: 3px solid var(--nav-Footer-Txt);
   border-radius: 50%;
   z-index: var(--z-dot);
-  box-shadow: 0 0 0 2px #00ff4c;
+  box-shadow: 0 0 0 2px var(--accent);
 }
 
 .projects .timeline .timeline-item.right::after {
@@ -93,13 +93,13 @@
   right: clamp(8px, 1vw, 11px);
   z-index: 1;
   border: 10px solid;
-  border-color: transparent transparent transparent var(--border);
+  border-color: transparent transparent transparent var(--accent);
 }
 
 .projects .timeline .timeline-item.right::before {
   left: clamp(8px, 1vw, 11px);
   right: auto;
-  border-color: transparent var(--border) transparent transparent;
+  border-color: transparent var(--accent) transparent transparent;
 }
 
 /* ── Date label ── */
@@ -132,25 +132,25 @@
   padding: clamp(16px, 2.5vw, 30px) clamp(16px, 2.5vw, 30px) 0;
   background: var(--primary-color-light);
   position: relative;
-  border-right: 5px solid var(--border);
-  border-bottom: 5px solid var(--border);
-  box-shadow: var(--shadow-glow);
+  border-right: 5px solid var(--accent);
+  border-bottom: 5px solid var(--accent);
+  box-shadow: 0px 0 30px var(--accent);
   border-radius: var(--radius-sm, 6px);
   transition: box-shadow 0.28s ease;
 }
 
 .projects .timeline-item.left .timeline-text:hover {
-  box-shadow: 20px 20px 30px var(--MagicColor-dim);
+  box-shadow: 20px 20px 30px var(--accent);
 }
 
 .projects .timeline-item.right .timeline-text:hover {
-  box-shadow: -20px 20px 30px var(--MagicColor-dim);
+  box-shadow: -20px 20px 30px var(--accent);
 }
 
 .projects .timeline .timeline-item.right .timeline-text {
   border-right: none;
-  border-left: 5px solid var(--border);
-  border-bottom: 5px solid var(--border);
+  border-left: 5px solid var(--accent);
+  border-bottom: 5px solid var(--accent);
 }
 
 .projects .timeline .timeline-text h2 {
@@ -190,7 +190,7 @@
   padding: clamp(3px, 0.5vh, 5px) clamp(8px, 1.2vw, 13px);
   border-radius: var(--radius-pill);
   background: var(--MagicColor-bg);
-  border: 1.3px solid rgb(165, 166, 165);
+  border: 1.3px solid var(--accent);
   font-size: clamp(var(--fs-xs), 0.72rem + 0.1vw, var(--fs-sm));
   font-weight: var(--fw-semibold);
   color: var(--ink);
@@ -217,7 +217,7 @@
   font-size: clamp(0.75rem, 0.72rem + 0.1vw, 0.82rem);
   font-weight: var(--fw-bold);
   user-select: none;
-  box-shadow: var(--shadow);
+  box-shadow: var(--accent);
   margin: clamp(12px, 2vh, 20px) 0;
   transition:
     background var(--transition-base),
@@ -318,7 +318,7 @@
 
   .projects .timeline-item.left .timeline-text:hover,
   .projects .timeline-item.right .timeline-text:hover {
-    box-shadow: 0 12px 24px var(--MagicColor-dim);
+    box-shadow: 0 12px 24px var(--accent);
   }
 }
 

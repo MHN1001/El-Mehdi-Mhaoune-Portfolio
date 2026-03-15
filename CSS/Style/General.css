@@ -138,7 +138,7 @@
   font-weight: var(--fw-bold);
   letter-spacing: var(--ls-widest);
   text-transform: uppercase;
-  color: var(--MagicColor, rgb(0, 255, 68));
+  color: #00ff8c;
   margin-bottom: clamp(6px, 1vh, 10px);
   opacity: 0.9;
 }
@@ -153,7 +153,7 @@
 }
 
 .title-accent {
-  color: var(--MagicColor, rgb(0, 255, 55));
+  color: #00ff8c;
 }
 
 .description {
@@ -195,7 +195,7 @@
   flex-direction: column;
   align-items: center;
   gap: var(--space-1);
-  color: rgb(13, 255, 0);
+  color: #00ff8c;
 }
 
 .scroll-label {
@@ -300,26 +300,18 @@
   .MainPicture {
     height: 100vh;
     min-height: 600px;
-    display: grid;
-    column-count: 1;
-    grid-row: 2;
-    grid-template-areas: "Bg" "description";
   }
 
-  /* switch to portrait image */
   .bg {
-    grid-area: "Bg";
-    content: url("/Images/MypictureForPhoneAndTablet.jpg");
-    object-position: center top;
+    object-position: center top; /* portrait image — show face at top */
   }
 
-  /* heavy bottom fade so card text is readable */
   .bg-overlay {
     background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0) 0%,
       rgba(0, 0, 0, 0.1) 20%,
-      rgba(0, 0, 0, 0.78) 100%,
+      rgba(0, 0, 0, 0.78) 80%,
       rgba(0, 0, 0, 0.93) 100%
     );
   }
@@ -331,12 +323,15 @@
   .card-tags {
     justify-content: center;
   }
+
   .title {
     font-size: clamp(1.2rem, 5vw, 1.7rem);
   }
+
   .description {
     font-size: var(--fs-sm);
   }
+
   .scroll-hint {
     display: none;
   }

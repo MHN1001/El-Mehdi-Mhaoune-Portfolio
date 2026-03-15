@@ -41,7 +41,7 @@
 
 .edu-card:hover {
   border-color: var(--MagicColor);
-  box-shadow: 0 10px 5px var(--MagicColor-dim);
+  box-shadow: 0 10px 5px var(--accent);
   transform: translateX(var(--space-1));
 }
 
@@ -107,8 +107,7 @@
   display: inline-block;
   padding: 2px clamp(5px, 0.8vw, var(--space-2));
   border-radius: var(--radius-pill);
-  background: var(--MagicColor);
-  color: black;
+  color: var(--nav-Footer-Txt);
   font-size: clamp(9px, var(--fs-xs), 11px);
   font-weight: var(--fw-bold);
   letter-spacing: var(--ls-wide);
@@ -117,7 +116,7 @@
 }
 
 .when {
-  color: var(--MagicColor);
+  color: var(--nav-Footer-Txt);
   font-size: clamp(var(--fs-xs), 0.75rem + 0.1vw, var(--fs-base));
   font-weight: var(--fw-medium);
 }

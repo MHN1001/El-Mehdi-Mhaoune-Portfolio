@@ -5,6 +5,7 @@
 .contacts {
   grid-area: contacts;
   justify-items: center;
+  padding-top: 10vh;
 }
 
 /* ── Social icon row ── */
@@ -31,7 +32,7 @@
   display: block;
   width: 50px;
   height: 50px;
-  background-image: url("/Images/Social-media-Image.png");
+  background-image: url("/Images/Social-media-Image.webp");
   background-repeat: no-repeat;
   /* NO background-size — sprite is pixel-perfect at natural size */
   transform: perspective(1000px);
@@ -46,47 +47,19 @@
 }
 
 /* ── Normal state (top row, y = 0) ── */
-.faceBook {
-  background-position: 0px 0px;
-}
-.rss {
-  background-position: -57px 0px;
-}
+
 .linkedIn {
   background-position: -114px 0px;
 }
-.pint {
-  background-position: -171px 0px;
-}
-.share {
-  background-position: -227px 0px;
-}
-.youtube {
-  background-position: -282px -1px;
-}
+
 .Gmail {
   background-position: -337px -1px;
 }
 
-/* ── Hover state (bottom row, y = -64px) ── */
-.faceBook:hover {
-  background-position: 0px -64px;
-}
-.rss:hover {
-  background-position: -57px -64px;
-}
 .linkedIn:hover {
   background-position: -114px -64px;
 }
-.pint:hover {
-  background-position: -171px -64px;
-}
-.share:hover {
-  background-position: -227px -64px;
-}
-.youtube:hover {
-  background-position: -282px -64px;
-}
+
 .Gmail:hover {
   background-position: -337px -64px;
 }
