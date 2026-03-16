@@ -1,21 +1,15 @@
-/* ════════════════════════════════════════════════════════════════
-   PROJECTS SECTION
-   ════════════════════════════════════════════════════════════════ */
-
 .projects {
   grid-area: projects;
   position: relative;
   justify-items: center;
 }
 
-/* ── Timeline wrapper ── */
 .projects .timeline {
   position: relative;
   width: min(90%, 1100px);
   margin: clamp(16px, 3vh, 32px) auto 0;
 }
 
-/* Center vertical line */
 .projects .timeline::after {
   content: "";
   position: absolute;
@@ -33,37 +27,28 @@
   margin-left: -1px;
 }
 
-/* ── Timeline item ── */
 .projects .timeline .timeline-item {
   position: relative;
   background: inherit;
   width: 50%;
   margin-bottom: clamp(18px, 3vh, 30px);
   opacity: 0;
-  transition:
-    opacity var(--transition-xslow),
-    transform var(--transition-xslow);
 }
 
 .projects .timeline .timeline-item.left {
   left: 0;
   padding-right: clamp(20px, 3vw, 30px);
-  transform: translateX(-40px);
 }
 
 .projects .timeline .timeline-item.right {
   left: 50%;
   padding-left: clamp(20px, 3vw, 30px);
-  transform: translateX(40px);
 }
 
-/* Revealed by JS */
 .projects .timeline .timeline-item.show {
   opacity: 1;
-  transform: translateX(0);
 }
 
-/* ── Circle dot ── */
 .projects .timeline .timeline-item::after {
   content: "";
   position: absolute;
@@ -83,7 +68,6 @@
   right: auto;
 }
 
-/* ── Arrow pointer ── */
 .projects .timeline .timeline-item::before {
   content: "";
   position: absolute;
@@ -102,7 +86,6 @@
   border-color: transparent var(--accent) transparent transparent;
 }
 
-/* ── Date label ── */
 .projects .timeline .timeline-date {
   position: absolute;
   width: 100%;
@@ -127,7 +110,6 @@
   left: auto;
 }
 
-/* ── Text card ── */
 .projects .timeline .timeline-text {
   padding: clamp(16px, 2.5vw, 30px) clamp(16px, 2.5vw, 30px) 0;
   background: var(--primary-color-light);
@@ -136,15 +118,6 @@
   border-bottom: 5px solid var(--accent);
   box-shadow: 0px 0 30px var(--accent);
   border-radius: var(--radius-sm, 6px);
-  transition: box-shadow 0.28s ease;
-}
-
-.projects .timeline-item.left .timeline-text:hover {
-  box-shadow: 20px 20px 30px var(--accent);
-}
-
-.projects .timeline-item.right .timeline-text:hover {
-  box-shadow: -20px 20px 30px var(--accent);
 }
 
 .projects .timeline .timeline-item.right .timeline-text {
@@ -174,7 +147,6 @@
   color: var(--section-title-color);
 }
 
-/* ── Tags ── */
 .TMcard-tags {
   display: flex;
   flex-wrap: wrap;
@@ -198,7 +170,6 @@
   z-index: 10;
 }
 
-/* ── Button container ── */
 .timelineButtonContainer {
   display: flex;
   justify-content: flex-end;
@@ -217,19 +188,12 @@
   font-size: clamp(0.75rem, 0.72rem + 0.1vw, 0.82rem);
   font-weight: var(--fw-bold);
   user-select: none;
-  box-shadow: var(--accent);
   margin: clamp(12px, 2vh, 20px) 0;
-  transition:
-    background var(--transition-base),
-    color var(--transition-base),
-    transform 0.15s,
-    box-shadow var(--transition-base);
 }
 
 .timelineButtonContainer button:hover {
   background: var(--accent);
   color: var(--primary-color-light);
-  transform: scale(1.08);
   box-shadow: 0 6px 18px color-mix(in oklab, var(--accent) 30%, transparent);
 }
 
@@ -241,10 +205,6 @@
   fill: currentColor;
 }
 
-/* ════════════════════════════════════════════════════════════════
-   RESPONSIVE
-   ════════════════════════════════════════════════════════════════ */
-
 @media (max-width: 1024px) {
   .projects .timeline {
     width: 95%;
@@ -255,40 +215,34 @@
   }
 }
 
-/* Single column — line on left */
 @media (max-width: 767px) {
   .projects .timeline::after {
     left: clamp(10px, 3vw, 14px);
     margin-left: 0;
   }
-
   .projects .timeline .timeline-item {
     width: 100%;
     padding-left: clamp(28px, 6vw, 42px);
     padding-right: 0;
     left: 0 !important;
   }
-
   .projects .timeline .timeline-item.left {
     padding-right: 0;
   }
   .projects .timeline .timeline-item.right {
     padding-left: clamp(28px, 6vw, 42px);
   }
-
   .projects .timeline .timeline-item.left::after,
   .projects .timeline .timeline-item.right::after {
     left: clamp(2px, 1vw, 4px);
     right: auto;
   }
-
   .projects .timeline .timeline-item.left::before,
   .projects .timeline .timeline-item.right::before {
     left: clamp(16px, 4vw, 22px);
     right: auto;
     border-color: transparent var(--border) transparent transparent;
   }
-
   .projects .timeline .timeline-item.left .timeline-date,
   .projects .timeline .timeline-item.right .timeline-date {
     position: relative;
@@ -300,22 +254,11 @@
     font-size: var(--fs-sm);
     white-space: normal;
   }
-
   .projects .timeline .timeline-item.left .timeline-text,
   .projects .timeline .timeline-item.right .timeline-text {
     border-right: none;
     border-left: 5px solid var(--border);
   }
-
-  /* slide up on mobile */
-  .projects .timeline .timeline-item.left,
-  .projects .timeline .timeline-item.right {
-    transform: translateY(30px);
-  }
-  .projects .timeline .timeline-item.show {
-    transform: translateY(0);
-  }
-
   .projects .timeline-item.left .timeline-text:hover,
   .projects .timeline-item.right .timeline-text:hover {
     box-shadow: 0 12px 24px var(--accent);
@@ -332,13 +275,5 @@
   .TMtag {
     font-size: var(--fs-xs);
     padding: 3px 8px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .projects .timeline .timeline-item,
-  .projects .timeline .timeline-text {
-    transition: none !important;
-    animation: none !important;
   }
 }

@@ -1,7 +1,3 @@
-/* ════════════════════════════════════════════════════════════════
-   MAIN PICTURE SECTION
-   ════════════════════════════════════════════════════════════════ */
-
 .MainPicture {
   grid-area: general;
   position: relative;
@@ -13,9 +9,6 @@
   padding: 0;
 }
 
-/* ── Background image ──
-   object-position: 30% center keeps the face on the left third
-   of the frame, leaving the right side open for the info card     */
 .bg {
   position: absolute;
   inset: 0;
@@ -26,11 +19,9 @@
   z-index: 0;
   filter: saturate(1.05) contrast(1.06);
   box-shadow: var(--bgShadowFg);
-  transition: filter var(--transition-xslow);
   will-change: filter;
 }
 
-/* ── Filter presets ── */
 .bg.filter-none {
   filter: saturate(1.05) contrast(1.06);
 }
@@ -47,9 +38,6 @@
   filter: saturate(0.8) hue-rotate(185deg) brightness(0.95) contrast(1.08);
 }
 
-/* ── Gradient overlay ──
-   On desktop: strong left-side fade so card on right stays readable
-   Combined with bottom fade for scroll hint legibility             */
 .bg-overlay {
   position: absolute;
   inset: 0;
@@ -60,7 +48,6 @@
   pointer-events: none;
 }
 
-/* ── Filter bar ── */
 .filter-bar {
   position: absolute;
   top: clamp(var(--space-4), 3vh, var(--space-5));
@@ -98,10 +85,6 @@
   cursor: pointer;
   flex-shrink: 0;
   white-space: nowrap;
-  transition:
-    background var(--transition-base),
-    color var(--transition-base),
-    transform 0.15s;
 }
 
 .filter-btn:hover {
@@ -114,7 +97,6 @@
   color: #000;
 }
 
-/* ── Info card ── */
 .card {
   position: absolute;
   right: clamp(1rem, 5vw, 5vw);
@@ -163,7 +145,6 @@
   margin-bottom: clamp(0.8rem, 2vh, 1.4rem);
 }
 
-/* ── Tags ── */
 .card-tags {
   display: flex;
   flex-wrap: wrap;
@@ -184,7 +165,6 @@
   letter-spacing: var(--ls-normal);
 }
 
-/* ── Scroll hint ── */
 .scroll-hint {
   position: absolute;
   bottom: clamp(var(--space-4), 3vh, var(--space-5));
@@ -207,24 +187,8 @@
 
 .scroll-arrow {
   font-size: var(--fs-lg);
-  animation: scrollBounce 1.6s ease infinite;
 }
 
-@keyframes scrollBounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(6px);
-  }
-}
-
-/* ════════════════════════════════════════════════════════════════
-   RESPONSIVE
-   ════════════════════════════════════════════════════════════════ */
-
-/* ── PC (≥ 1025px): landscape, card right ── */
 @media (min-width: 1025px) {
   .bg {
     object-position: 30% center;
@@ -238,7 +202,6 @@
   }
 }
 
-/* ── Large tablet (769px – 1024px): landscape, card centered ── */
 @media (max-width: 1024px) and (min-width: 769px) {
   .bg {
     object-position: center center;
@@ -251,8 +214,7 @@
     );
   }
   .card {
-    left: 20v;
-
+    left: 35vw;
     top: 54%;
     transform: translate(-50%, -50%);
     width: clamp(320px, 65vw, 560px);
@@ -266,7 +228,6 @@
   }
 }
 
-/* ── Small tablet (641px – 768px): landscape, card centered ── */
 @media (max-width: 768px) and (min-width: 641px) {
   .bg {
     object-position: center center;
@@ -294,18 +255,14 @@
   }
 }
 
-/* ── Phone (≤ 640px):
-   portrait image — face fills top, card pinned to bottom center  ── */
 @media (max-width: 640px) {
   .MainPicture {
     height: 100vh;
     min-height: 600px;
   }
-
   .bg {
-    object-position: center top; /* portrait image — show face at top */
+    object-position: center top;
   }
-
   .bg-overlay {
     background: linear-gradient(
       180deg,
@@ -315,33 +272,19 @@
       rgba(0, 0, 0, 0.93) 100%
     );
   }
-
   .card {
     display: none;
   }
-
   .card-tags {
     justify-content: center;
   }
-
   .title {
     font-size: clamp(1.2rem, 5vw, 1.7rem);
   }
-
   .description {
     font-size: var(--fs-sm);
   }
-
   .scroll-hint {
     display: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .scroll-arrow {
-    animation: none;
-  }
-  .bg {
-    transition: none !important;
   }
 }

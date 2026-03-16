@@ -3,7 +3,6 @@
   justify-items: center;
 }
 
-/* ── Social icon row ── */
 .social-row {
   margin-top: clamp(12px, 2vh, 24px);
   display: flex;
@@ -12,16 +11,11 @@
   gap: clamp(6px, 1.5vw, 10px);
 }
 
-/* Strip link default styling */
 .social-row a {
   display: inline-block;
   line-height: 0;
   padding-top: 1vh;
 }
-
-/* ════════════════════════════════════════════════════════════════
-   SOCIAL ICON — shared base (SVG-based, no sprite)
-   ════════════════════════════════════════════════════════════════ */
 
 .social-icon {
   display: flex;
@@ -34,13 +28,6 @@
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-sizing: border-box;
-
-  transform: perspective(1000px) translateY(0) scale(1);
-  transform-style: preserve-3d;
-  transition:
-    transform 350ms ease,
-    box-shadow 350ms ease,
-    background 350ms ease;
   cursor: pointer;
 }
 
@@ -51,53 +38,12 @@
   border-radius: 8px;
 }
 
-/* ── LinkedIn hover ── */
-.linkedIn:hover {
-  transform: perspective(1000px) translateY(-6px) scale(1.1);
-  background: rgba(10, 102, 194, 0.15);
-  box-shadow:
-    0 8px 24px rgba(10, 102, 194, 0.5),
-    0 0 12px rgba(10, 102, 194, 0.3);
-}
-
-/* ── Gmail hover ── */
-.Gmail:hover {
-  transform: perspective(1000px) translateY(-6px) scale(1.1);
-  background: rgba(66, 133, 244, 0.12);
-  box-shadow:
-    0 8px 24px rgba(66, 133, 244, 0.45),
-    0 0 12px rgba(234, 67, 53, 0.25);
-}
-
-/* ── WhatsApp hover ── */
-.WhatsApp:hover {
-  transform: perspective(1000px) translateY(-6px) scale(1.1);
-  background: rgba(37, 211, 102, 0.12);
-  box-shadow:
-    0 8px 24px rgba(37, 211, 102, 0.5),
-    0 0 12px rgba(37, 211, 102, 0.3);
-}
-
-/* ════════════════════════════════════════════════════════════════
-   RESPONSIVE
-   ════════════════════════════════════════════════════════════════ */
-
 @media (max-width: 480px) {
   .social-icon {
     width: 46px;
     height: 46px;
-    transition: opacity 200ms ease;
   }
   .social-icon:hover {
-    transform: none;
-    opacity: 0.75;
     box-shadow: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .social-icon {
-    transition: none !important;
-    transform: none !important;
   }
 }

@@ -1,0 +1,49 @@
+.social-icon {
+  transform: perspective(1000px) translateY(0) scale(1);
+  transform-style: preserve-3d;
+  transition:
+    transform 350ms ease,
+    box-shadow 350ms ease,
+    background 350ms ease;
+}
+
+.linkedIn:hover {
+  transform: perspective(1000px) translateY(-6px) scale(1.1);
+  background: rgba(10, 102, 194, 0.15);
+  box-shadow:
+    0 8px 24px rgba(10, 102, 194, 0.5),
+    0 0 12px rgba(10, 102, 194, 0.3);
+}
+
+.Gmail:hover {
+  transform: perspective(1000px) translateY(-6px) scale(1.1);
+  background: rgba(66, 133, 244, 0.12);
+  box-shadow:
+    0 8px 24px rgba(66, 133, 244, 0.45),
+    0 0 12px rgba(234, 67, 53, 0.25);
+}
+
+.WhatsApp:hover {
+  transform: perspective(1000px) translateY(-6px) scale(1.1);
+  background: rgba(37, 211, 102, 0.12);
+  box-shadow:
+    0 8px 24px rgba(37, 211, 102, 0.5),
+    0 0 12px rgba(37, 211, 102, 0.3);
+}
+
+@media (max-width: 480px) {
+  .social-icon {
+    transition: opacity 200ms ease;
+  }
+  .social-icon:hover {
+    transform: none;
+    opacity: 0.75;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-icon {
+    transition: none !important;
+    transform: none !important;
+  }
+}

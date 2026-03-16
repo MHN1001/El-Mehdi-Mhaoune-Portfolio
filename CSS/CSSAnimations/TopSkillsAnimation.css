@@ -1,0 +1,79 @@
+.flip {
+  transition:
+    box-shadow var(--transition-base),
+    transform var(--transition-bounce) !important;
+}
+
+.flip:hover {
+  box-shadow: var(--shadow-glow-hover);
+}
+
+.flip.is-flipped {
+  transform: rotateY(180deg) !important;
+}
+
+.face {
+  transition:
+    border-color var(--transition-base),
+    background var(--transition-base) !important;
+}
+
+.hero {
+  transition:
+    transform var(--transition-slow),
+    filter var(--transition-slow);
+}
+
+.tile:hover .face.front .hero {
+  transform: scale(1.04);
+  filter: brightness(1.05) saturate(1.1);
+}
+
+.flip-btn {
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    transform 0.15s,
+    box-shadow var(--transition-base) !important;
+}
+
+.flip-btn:hover {
+  transform: scale(1.08);
+}
+
+.btn {
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    transform 0.15s !important;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+}
+
+.read-more {
+  transition:
+    background var(--transition-base),
+    transform var(--transition-base),
+    box-shadow var(--transition-base) !important;
+}
+
+.read-more:hover {
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flip {
+    transition: box-shadow var(--transition-base) !important;
+  }
+  .flip.is-flipped {
+    transition: none !important;
+  }
+  .hero,
+  .flip-btn,
+  .btn,
+  .read-more {
+    transition: none !important;
+  }
+}

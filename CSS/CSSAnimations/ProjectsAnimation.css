@@ -10,3 +10,63 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+.projects .timeline .timeline-item {
+  transition:
+    opacity var(--transition-xslow),
+    transform var(--transition-xslow);
+}
+
+.projects .timeline .timeline-item.left {
+  transform: translateX(-40px);
+}
+
+.projects .timeline .timeline-item.right {
+  transform: translateX(40px);
+}
+
+.projects .timeline .timeline-item.show {
+  transform: translateX(0);
+}
+
+.projects .timeline .timeline-text {
+  transition: box-shadow 0.28s ease;
+}
+
+.projects .timeline-item.left .timeline-text:hover {
+  box-shadow: 20px 20px 30px var(--accent);
+}
+
+.projects .timeline-item.right .timeline-text:hover {
+  box-shadow: -20px 20px 30px var(--accent);
+}
+
+.timelineButtonContainer button {
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    transform 0.15s,
+    box-shadow var(--transition-base);
+}
+
+.timelineButtonContainer button:hover {
+  transform: scale(1.08);
+}
+
+@media (max-width: 767px) {
+  .projects .timeline .timeline-item.left,
+  .projects .timeline .timeline-item.right {
+    transform: translateY(30px);
+  }
+  .projects .timeline .timeline-item.show {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects .timeline .timeline-item,
+  .projects .timeline .timeline-text {
+    transition: none !important;
+    animation: none !important;
+  }
+}

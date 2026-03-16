@@ -1,26 +1,18 @@
-/* ════════════════════════════════════════════════════════════════
-   CERTIFICATIONS SECTION
-   1 col phone · 2 cols small tablet · 3 cols large tablet · 4 cols pc
-   ════════════════════════════════════════════════════════════════ */
-
 .certifications {
   grid-area: certifications;
   position: relative;
   justify-items: center;
 }
 
-/* ── Gallery ── */
 .gallery {
   max-width: 1260px;
   margin: clamp(0.8rem, 2vh, 1.4rem) auto clamp(1.4rem, 3vh, 2.4rem);
   padding: 5vh clamp(0.5rem, 2vw, 1rem);
   display: grid;
-  /* Default: 4 columns — large screens */
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(14px, 5vw, 30px);
 }
 
-/* ── Tile ── */
 figure.tile {
   margin-bottom: 5vh;
   background: #0f141a;
@@ -29,48 +21,16 @@ figure.tile {
   box-shadow: var(--certiCardShadow);
   overflow: clip;
   position: relative;
-  transform: translateY(0) scale(1);
   will-change: transform;
-  transition:
-    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.4s ease,
-    /* ← must re-declare everything */ border-color 0.4s ease,
-    /*    the global rule would kill */ background-color 0.4s ease; /*    transform if not explicit  */
 }
 
-figure.tile:hover {
-  transform: translateY(-12px) scale(1.03); /* more travel, visible lift */
-  box-shadow: var(--certiCardShadow-hover);
-  border-color: var(--MagicColor, var(--accent));
-}
-
-figure.tile:has(a:focus-visible) {
-  transform: translateY(-9px);
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.45);
-  border-color: var(--border);
-}
-
-/* ── Thumbnail ── */
 .thumb {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
-  transform: scale(1);
-  filter: saturate(1.02) contrast(1.02);
-  /* slightly slower than tile so it feels layered */
-  transition:
-    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-    filter 0.55s ease;
 }
 
-.tile:hover .thumb,
-.tile:has(a:focus-visible) .thumb {
-  transform: scale(1.08);
-  filter: saturate(1.15) contrast(1.08) brightness(1.04);
-}
-
-/* ── Caption ── */
 figcaption.caption {
   position: absolute;
   inset: auto 0 0 0;
@@ -85,18 +45,6 @@ figcaption.caption {
     rgba(34, 255, 0, 0) 0%,
     rgba(22, 119, 0, 0.6) 100%
   );
-  opacity: 0;
-  transform: translateY(14px);
-  /* slight delay so caption slides in after thumb starts scaling */
-  transition:
-    opacity 0.35s ease 0.08s,
-    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.08s;
-}
-
-.tile:hover .caption,
-.tile:has(a:focus-visible) .caption {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .meta {
@@ -132,10 +80,6 @@ figcaption.caption {
   border-radius: 6px;
 }
 
-/* ════════════════════════════════════════════════════════════════
-   LIGHTBOX
-   ════════════════════════════════════════════════════════════════ */
-
 .lightbox-overlay {
   position: fixed;
   inset: 0;
@@ -147,14 +91,6 @@ figcaption.caption {
   justify-content: center;
   z-index: var(--z-lightbox, 9999);
   padding: clamp(12px, 2vw, 20px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.lightbox-overlay.open {
-  opacity: 1;
-  pointer-events: all;
 }
 
 .lightbox-window {
@@ -166,12 +102,6 @@ figcaption.caption {
   max-width: 860px;
   width: 100%;
   box-shadow: var(--shadow-lightbox, 0 32px 80px rgba(0, 0, 0, 0.7));
-  transform: scale(0.94) translateY(20px);
-  transition: transform 0.3s ease;
-}
-
-.lightbox-overlay.open .lightbox-window {
-  transform: scale(1) translateY(0);
 }
 
 .lightbox-close {
@@ -190,14 +120,10 @@ figcaption.caption {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition:
-    background 0.18s,
-    transform 0.18s;
 }
 
 .lightbox-close:hover {
   background: rgba(255, 0, 0, 0.768);
-  transform: scale(1.1);
 }
 
 .lightbox-body {
@@ -222,7 +148,6 @@ figcaption.caption {
   object-fit: cover;
   display: block;
   padding: clamp(6px, 1vw, 10px);
-  transition: opacity 0.25s ease;
 }
 
 .lightbox-description {
@@ -286,25 +211,17 @@ figcaption.caption {
   letter-spacing: 0.03em;
 }
 
-/* ════════════════════════════════════════════════════════════════
-   RESPONSIVE
-   ════════════════════════════════════════════════════════════════ */
-
-/* ── PC (≥ 1025px): 4 columns ── */
 @media (min-width: 1025px) {
   .tile:hover .thumb,
   .tile:has(a:focus-visible) .thumb {
-    transform: scale(1.08);
     filter: saturate(1.15) contrast(1.08) brightness(1.04);
   }
   .tile:hover .caption,
   .tile:has(a:focus-visible) .caption {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
-/* ── Large tablet (769px – 1024px): 3 columns ── */
 @media (max-width: 1024px) and (min-width: 769px) {
   .gallery {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -312,7 +229,6 @@ figcaption.caption {
   }
 }
 
-/* ── Small tablet (641px – 768px): 2 columns ── */
 @media (max-width: 768px) and (min-width: 641px) {
   .gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -320,7 +236,6 @@ figcaption.caption {
   }
 }
 
-/* ── Phone (≤ 640px): 1 column, caption always visible ── */
 @media (max-width: 640px) {
   .gallery {
     grid-template-columns: 1fr;
@@ -329,17 +244,14 @@ figcaption.caption {
     margin-right: auto;
     gap: clamp(12px, 3vw, 20px);
   }
-  /* always active state on touch — no hover available */
   .tile .thumb {
     filter: saturate(1.15) contrast(1.08) brightness(1.04);
   }
   figcaption.caption {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
-/* ── Lightbox stacks vertically on mobile ── */
 @media (max-width: 600px) {
   .lightbox-body {
     flex-direction: column;
@@ -361,21 +273,10 @@ figcaption.caption {
 @media print {
   figure.tile {
     box-shadow: none !important;
-    transform: none !important;
   }
   figcaption.caption {
     opacity: 1 !important;
-    transform: none !important;
     background: rgba(0, 0, 0, 0.06) !important;
     color: #000 !important;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    transition: none !important;
-    animation: none !important;
   }
 }

@@ -1,85 +1,58 @@
-/* ── Entrance Animation ── */
-@keyframes eduSlideIn {
-  from {
-    opacity: 0;
-    transform: translateX(calc(var(--space-3) * -1));
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* ── Enable height animation on details ── */
+:root {
+  interpolate-size: allow-keywords;
 }
 
 .edu-card {
-  animation: eduSlideIn var(--transition-reveal) both;
-  animation-delay: calc(var(--i) * 0.1s);
+  transition:
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* ── Body Expand Animation ── */
-@keyframes eduExpand {
-  from {
-    opacity: 0;
-    transform: translateY(calc(var(--space-1) * -1));
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.edu-card:hover {
+  transform: translateX(8px);
+}
+
+.edu-icon {
+  transition: background 0.4s ease;
+}
+
+.edu-arrow {
+  transition:
+    transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+    color 0.3s ease;
+}
+
+.edu-card[open] .edu-arrow {
+  transform: rotate(90deg);
+}
+
+/* ── Smooth open / close ── */
+.edu-body {
+  overflow: hidden;
+  height: 0;
+  transition: height 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .edu-card[open] .edu-body {
-  animation: eduExpand var(--transition-slow) both;
+  height: auto;
 }
 
-/* ── Dot Pulse (timeline dot on hover) ── */
-@keyframes dotPulse {
-  0% {
-    box-shadow:
-      0 0 0 3px var(--card),
-      0 0 0 5px var(--MagicColor);
-  }
-  50% {
-    box-shadow:
-      0 0 0 3px var(--card),
-      0 0 0 8px var(--MagicColor-dim);
-  }
-  100% {
-    box-shadow:
-      0 0 0 3px var(--card),
-      0 0 0 5px var(--MagicColor);
-  }
+.lightbox-overlay {
+  opacity: 0;
+  transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.edu-card:hover::before {
-  animation: dotPulse 1.2s var(--transition-base) infinite;
+.lightbox-overlay.open {
+  opacity: 1;
 }
 
-/* ── Icon bounce on open ── */
-@keyframes iconPop {
-  0% {
-    transform: scale(1);
-  }
-  40% {
-    transform: scale(1.18);
-  }
-  70% {
-    transform: scale(0.95);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.edu-card[open] .edu-icon {
-  animation: iconPop var(--transition-slow) both;
-}
-
-/* ── Reduced Motion (Accessibility) ── */
 @media (prefers-reduced-motion: reduce) {
   .edu-card,
-  .edu-card[open] .edu-body,
-  .edu-card[open] .edu-icon {
-    animation: none !important;
+  .edu-arrow,
+  .edu-body,
+  .lightbox-overlay {
     transition: none !important;
   }
 }

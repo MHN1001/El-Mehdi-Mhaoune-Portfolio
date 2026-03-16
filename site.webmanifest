@@ -1,0 +1,10 @@
+{
+  "name": "MHN",
+  "short_name": "MHN",
+  "icons": [
+    { "src": "./Images/mhn_logo.svg", "sizes": "any", "type": "image/svg+xml" }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone"
+}
