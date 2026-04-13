@@ -42,6 +42,8 @@ const DVLD_Btn = document.getElementById("DVLD_Btn");
 DVLD_Btn.addEventListener("click", OpenDVLDSourceCode);
 const Aw_Btn = document.getElementById("Aw_Btn");
 Aw_Btn.addEventListener("click", OpenAw_ourceCode);
+const PSC_Btn = document.getElementById("PSC_Btn");
+PSC_Btn.addEventListener("click", OpenMyPortfoliowebSiteSourceCode);
 
 function OpenStonePaperScissorGameSourceCode() {
   window.open("https://github.com/MHN1001/stone-Paper-Scissor-Game", "_blank");
@@ -65,4 +67,8 @@ function OpenTicTacToeSourceCode() {
 
 function OpenBankManagementSourceCode() {
   window.open("https://github.com/MHN1001/Bank-Management", "_blank");
+}
+
+function OpenMyPortfoliowebSiteSourceCode() {
+  window.open("https://github.com/MHN1001/Portfolio", "_blank");
 }
